@@ -1,0 +1,258 @@
+{
+ "readOn": "2026-10-24",
+ "sources": [
+  {
+   "id": "uk-eta",
+   "dest": "GB",
+   "title": "Get an electronic travel authorisation (ETA) to visit the UK",
+   "url": "https://www.gov.uk/eta",
+   "api": "https://www.gov.uk/api/content/eta",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2026-10-22",
+   "facts": [
+    "An ETA costs £20",
+    "It costs £20 to apply online or through the UK ETA app. You cannot get a refund after you apply.",
+    "An ETA lasts for 2 years or until your passport expires, whichever is sooner.",
+    "You’ll usually get a decision by email within a day, but it can take up to 3 working days.",
+    "Each person travelling needs an ETA, including babies and children.",
+    "Other websites may charge more to apply. Avoid websites that imitate government services."
+   ],
+   "licence": "Open Government Licence v3.0",
+   "licenceQuote": "All content is available under the Open Government Licence v3.0, except where otherwise stated © Crown copyright (pied de page de GOV.UK, https://www.gov.uk/help/terms-conditions)",
+   "attribution": "Contains public sector information licensed under the Open Government Licence v3.0."
+  },
+  {
+   "id": "uk-fees",
+   "dest": "GB",
+   "title": "Home Office immigration and nationality fees, 8 October 2026 (et 8 April 2026 pour la hausse 16 £ → 20 £)",
+   "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table",
+   "files": [
+    "https://assets.publishing.service.gov.uk/media/6a9ff9014e17456e2cdf5167/Fees_Table_08_October_26.ods",
+    "https://assets.publishing.service.gov.uk/media/69bacf0dbfd6895605dad834/Fees_Table_8_April_26.ods"
+   ],
+   "readOn": "2026-10-24",
+   "facts": [
+    "electronic travel authorisation (ETA) | £16 | £20 | £4 | 25% (tableau du 8 avril 2026)",
+    "Visit visa – short up to 6 months | £135"
+   ],
+   "licence": "Open Government Licence v3.0",
+   "licenceQuote": "idem GOV.UK"
+  },
+  {
+   "id": "uk-eta-list",
+   "dest": "GB",
+   "title": "Immigration Rules Appendix ETA National List",
+   "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-eta-national-list",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2026-03-05",
+   "licence": "Open Government Licence v3.0"
+  },
+  {
+   "id": "uk-visa-list",
+   "dest": "GB",
+   "title": "Immigration Rules Appendix Visitor: Visa national list",
+   "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-visitor-visa-national-list",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2026-03-05",
+   "licence": "Open Government Licence v3.0"
+  },
+  {
+   "id": "ca-irpr",
+   "dest": "CA",
+   "title": "Immigration and Refugee Protection Regulations (SOR/2002-227), art. 7.01, 12.05, 190, 294.1, 296, annexe 1.1",
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/FullText.html",
+   "urlFr": "https://laws-lois.justice.gc.ca/fra/reglements/DORS-2002-227/TexteComplet.html",
+   "readOn": "2026-10-24",
+   "currentTo": "2026-09-30",
+   "facts": [
+    "294.1 (1) A fee of $7 is payable for processing an application for an electronic travel authorization.",
+    "296 (1) A fee of $100 is payable for processing an application for a temporary resident visa",
+    "12.05 (1) An electronic travel authorization is valid for a period of five years from the day on which it is issued … or until … the applicant’s passport … expires",
+    "190 (1)(c) [exempt:] a national of the United States or a person who has been lawfully admitted to the United States for permanent residence",
+    "7.01 (2) … (a) have held a temporary resident visa at any time during the 10-year period … or (b) hold a valid United States nonimmigrant visa"
+   ],
+   "licence": "Reproduction of Federal Law Order (SI/97-5)",
+   "licenceQuote": "Anyone may, without charge or request for permission, reproduce enactments and consolidations of enactments of the Government of Canada … provided due diligence is exercised in ensuring the accuracy of the materials reproduced and the reproduction is not represented as an official version."
+  },
+  {
+   "id": "ca-eta-page",
+   "dest": "CA",
+   "title": "Electronic Travel Authorization (eTA) — canada.ca (lien officiel de demande)",
+   "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html",
+   "urlFr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/visiter-canada/ave.html",
+   "apply": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2026-06-05",
+   "facts": [
+    "It only costs CAN$7.",
+    "Most applications are approved within minutes … an email will be sent with instructions within 72 hours.",
+    "Only apply for an eTA on this official Government of Canada website."
+   ],
+   "licence": "Avis canada.ca : reproduction non commerciale seulement",
+   "licenceQuote": "you may not reproduce materials on this site, in whole or in part, for the purposes of commercial redistribution without prior written permission from the copyright administrator (https://www.canada.ca/en/transparency/terms.html)",
+   "use": "Aucun texte de canada.ca n'est reproduit : lien vers le service officiel seulement ; les chiffres et listes publiés sur le site viennent du RIPR (Justice Laws), réutilisable."
+  },
+  {
+   "id": "us-fees",
+   "dest": "US",
+   "title": "Certain DHS Immigration-Related Fees Required by HR-1: Fiscal Year 2027 Adjustments for Inflation (Federal Register 2026-20185, 1er octobre 2026)",
+   "url": "https://www.federalregister.gov/documents/2026/10/01/2026-20185/certain-dhs-immigration-related-fees-required-by-hr-1-fiscal-year-2027-adjustments-for-inflation",
+   "readOn": "2026-10-24",
+   "facts": [
+    "CBP will begin assessing the FY 2027 amounts for the HR-1 I-94, ESTA, and EVUS fees described in this notice on October 16, 2026.",
+    "the inflation-adjusted FY 2027 ESTA fee will be $40.62 ($17 + $10.62 + $13) per travel authorization. In the event the ESTA application is denied, the FY 2027 fee is $10.62",
+    "The FY 2026 ESTA authorization fee of $40.27"
+   ],
+   "licence": "Domaine public (œuvre du gouvernement fédéral des États-Unis)",
+   "licenceQuote": "17 U.S.C. § 105 : « Copyright protection under this title is not available for any work of the United States Government »"
+  },
+  {
+   "id": "us-vwp",
+   "dest": "US",
+   "title": "U.S. Visa Waiver Program — DHS (liste des 42 pays)",
+   "url": "https://www.dhs.gov/visa-waiver-program",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2025-05-02",
+   "facts": [
+    "Romania was designated on January 9, 2025 but that designation was not implemented before rescission on May 2, 2025."
+   ],
+   "licence": "Domaine public (17 U.S.C. § 105)"
+  },
+  {
+   "id": "us-ecfr",
+   "dest": "US",
+   "title": "8 CFR 217.5(d) (validité ESTA) et 8 CFR 212.1(a)(1) (Canadiens dispensés de visa)",
+   "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-217/section-217.5",
+   "url2": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-212/section-212.1",
+   "readOn": "2026-10-24",
+   "upToDate": "2026-10-22",
+   "facts": [
+    "A travel authorization issued under ESTA will be valid for a period of two years from the date of issuance, unless the passport … will expire in less than two years",
+    "A visa is generally not required for Canadian citizens"
+   ],
+   "licence": "Domaine public (17 U.S.C. § 105)"
+  },
+  {
+   "id": "us-esta",
+   "dest": "US",
+   "title": "ESTA — site officiel de demande (CBP)",
+   "url": "https://esta.cbp.dhs.gov/",
+   "info": "https://www.cbp.gov/travel/international-visitors/esta",
+   "readOn": "2026-10-24",
+   "facts": [
+    "it is recommended that travelers apply as soon as they begin preparing travel plans",
+    "stays of up to 90 days without a visa (cbp.gov/travel/international-visitors/visa-waiver-program)"
+   ],
+   "licence": "Domaine public (17 U.S.C. § 105)"
+  },
+  {
+   "id": "au-eta",
+   "dest": "AU",
+   "title": "Electronic Travel Authority (subclass 601) — Department of Home Affairs",
+   "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/electronic-travel-authority-601",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2026-10-12",
+   "facts": [
+    "There is a service charge of AUD20 to use the Australian ETA app. There is no other charge payable for an ETA.",
+    "valid for travel to Australia for either 12 months, or for the period your passport is valid, whichever is shorter",
+    "You can remain in Australia for 3 months after each entry.",
+    "Each family member … must submit a separate application.",
+    "European passport holders may be eligible for an eVisitor (subclass 651) visa. There is no charge to make an eVisitor visa application."
+   ],
+   "licence": "Creative Commons Attribution 3.0 Australia",
+   "licenceQuote": "All material presented on this website is provided under a Creative Commons Attribution 3.0 Australia licence, with the exception of: the Commonwealth Coat of Arms … our logo … content supplied by third parties. You should attribute material you get from this website as Australian Government Department of Home Affairs. (https://www.homeaffairs.gov.au/access-and-accountability/using-our-website/copyright-and-disclaimer)",
+   "attribution": "Australian Government Department of Home Affairs"
+  },
+  {
+   "id": "au-evisitor",
+   "dest": "AU",
+   "title": "eVisitor (subclass 651) — Department of Home Affairs",
+   "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/evisitor-651",
+   "readOn": "2026-10-24",
+   "pageUpdated": "2026-09-08",
+   "facts": [
+    "The eVisitor visa is valid for travel to Australia for 12 months, starting from the date it is granted.",
+    "You can stay in Australia for 3 months after each entry."
+   ],
+   "licence": "Creative Commons Attribution 3.0 Australia"
+  },
+  {
+   "id": "nz-fees",
+   "dest": "NZ",
+   "title": "Table of changes to fee and levy rates, new rates from 1 October 2024 (INZ 11277 10/24)",
+   "url": "https://www.immigration.govt.nz/assets/inz/documents/media/immigration-fee-and-levy-table-rates-from-1-october-2024.pdf",
+   "readOn": "2026-10-24",
+   "facts": [
+    "Request for traveller NZeTA made via INZ website 23 ; via mobile app 17",
+    "The current charge is NZD $100 per eligible person from 1 October 2024 [IVL]"
+   ],
+   "caveat": "Dernier barème officiel lu ; l'outil Fee Finder d'INZ n'est pas lisible par robot. La page NZeTA officielle (capture du 2026-10-13) dit « From NZD $17 » et « Allow 72 hours » : cohérent.",
+   "licence": "Creative Commons Attribution 3.0 New Zealand",
+   "licenceQuote": "The Ministry (on behalf of the Crown) licenses you to copy, distribute and adapt content on this website in accordance with the Creative Commons Attribution (CC-BY) 3.0 New Zealand Licence. … This licence does not apply to any logos, emblems and trade marks (https://www.immigration.govt.nz/about-us/about-this-site/copyright/)",
+   "attribution": "Crown copyright, Immigration New Zealand (immigration.govt.nz)"
+  },
+  {
+   "id": "nz-waiver",
+   "dest": "NZ",
+   "title": "Visa waiver countries and territories — Immigration New Zealand",
+   "url": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
+   "readVia": "https://web.archive.org/web/20261008155257/https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
+   "readOn": "2026-10-08",
+   "facts": [
+    "Australian citizens and permanent residents travelling on an Australian passport do not need a visa or an NZeTA to enter New Zealand.",
+    "do not need a visitor visa … for a period of less than 3 months, or 6 months if from the United Kingdom"
+   ],
+   "caveat": "Le site d'INZ renvoie une page anti-robot (Incapsula) : la liste est lue sur la capture Wayback de la page officielle, datée, et réaffichée avec cette date.",
+   "licence": "Creative Commons Attribution 3.0 New Zealand"
+  },
+  {
+   "id": "nz-nzeta",
+   "dest": "NZ",
+   "title": "New Zealand Electronic Travel Authority (NZeTA) — Immigration New Zealand",
+   "url": "https://www.immigration.govt.nz/visas/new-zealand-electronic-travel-authority-nzeta/",
+   "readVia": "https://web.archive.org/web/20261013093032/https://www.immigration.govt.nz/visas/new-zealand-electronic-travel-authority-nzeta/",
+   "readOn": "2026-10-13",
+   "facts": [
+    "Valid for 2 years for travellers",
+    "Cost From NZD $17",
+    "Processing time Allow 72 hours",
+    "If you use the NZeTA app, it is cheaper, and you can request an NZeTA for up to 10 people at the same time."
+   ],
+   "licence": "Creative Commons Attribution 3.0 New Zealand"
+  },
+  {
+   "id": "ecb-fx",
+   "dest": "EUR",
+   "title": "Euro foreign exchange reference rates — BCE",
+   "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+   "feed": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+   "readOn": "2026-10-24",
+   "dataDate": "2026-10-23",
+   "licence": "Conditions du site de la BCE",
+   "licenceQuote": "users of this website may make free use of the information obtained directly from it subject to the following conditions: When such information is distributed or reproduced, it must appear accurately and the ECB must be cited as the source. … If the information is modified by the user (e.g. … calculation …) this must be stated explicitly. (https://www.ecb.europa.eu/home/disclaimer/html/index.en.html)",
+   "use": "Conversion en euros indiquée comme calcul du site, taux et date BCE affichés."
+  }
+ ],
+ "notPublished": [
+  {
+   "what": "ETIAS (UE)",
+   "why": "travel-europe.europa.eu ne se lit pas sans JavaScript et la recherche web est épuisée : ni date de lancement ni montant vérifiés à la source. Ne concerne pas les ressortissants de l'UE. À reprendre en phase 2 (EUR-Lex) avant toute page."
+  },
+  {
+   "what": "K-ETA (Corée du Sud)",
+   "why": "Hors du périmètre du brief (5 autorisations) ; exemption temporaire jusqu'au 31/12/2026 vue seulement sur des sources secondaires."
+  },
+  {
+   "what": "Prix des intermédiaires",
+   "why": "Jamais publiés par le site (règle : aucun concurrent nommé ou décrit). L'outil fait saisir le prix proposé et calcule l'écart. Constat pour le compte rendu seulement : ave-canada.e-visa.org 89/109/129 € pour une eTA à 7 CAD (lu le 2026-10-24)."
+  },
+  {
+   "what": "Frais de visa US (B1/B2), visa visiteur Australie (600) et NZ, biométrie Canada",
+   "why": "Non lus à la source : l'outil dit « visa nécessaire » et renvoie au site officiel, sans montant."
+  },
+  {
+   "what": "IVL pour les passagers en transit (NZ)",
+   "why": "Exemptions non publiées dans les pages lues : l'outil ne chiffre que la visite."
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route, type Locale } from '../../i18n/routes';
+import { helpers } from '../../lib/helpers';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang); const T = H.T;
+const name = SITE_NAMES[lang];
+const crumb = T({ en: 'Editorial policy', fr: 'Politique éditoriale', de: 'Redaktionelle Grundsätze', nl: 'Redactiestatuut' });
+const description = T({
+  en: `Where the fees on ${name} come from, who answers for them, how often they are read, how estimates are labelled and what happens when an error is found.`,
+  fr: `D’où viennent les prix d’${name}, qui en répond, à quel rythme ils sont relus, comment les estimations sont signalées et ce qui se passe en cas d’erreur.`,
+  de: `Woher die Gebühren auf ${name} kommen, wer für sie einsteht, wie oft sie gelesen werden, wie Schätzungen gekennzeichnet sind und was bei einem Fehler geschieht.`,
+  nl: `Waar de tarieven op ${name} vandaan komen, wie ervoor instaat, hoe vaak ze gelezen worden, hoe schattingen worden aangeduid en wat er bij een fout gebeurt.`,
+});
+const mail = `mailto:${CONTACT_EMAIL}`;
+---
+<PageLayout title={`${crumb} – ${name}`} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: crumb }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    {lang === 'en' && <>
+      <h1>Editorial and corrections policy</h1>
+      <p>A wrong fee, and a traveller pays a copycat site or misses a flight. Here is where our figures come from, who answers for them and what we do when one is wrong.</p>
+      <h2>Responsibility</h2><p>{AUTHOR_NAME} answers for every fee, list and date shown. Report a gap with an official page to <a href={mail}>{CONTACT_EMAIL}</a>; we check it at the source.</p>
+      <h2>Primary sources only</h2><p>Every fee comes from the government text that sets it: the Home Office fee table, the Canadian regulations, the Federal Register, the Australian and New Zealand official pages. Nothing is copied from an agency or another website. A figure we could not read ourselves is not published.</p>
+      <h2>Estimates, always labelled</h2><p>Amounts in euros are conversions at the ECB reference rate of a stated day, not the amount your bank will charge, and they are called that everywhere.</p>
+      <h2>Checks before publication</h2><p>Every build runs the engine tests (fees, lists, validity, dates); a mismatch stops publication.</p>
+      <h2>Rhythm</h2><p>Exchange rates and official pages: read by a script every working day. Fee changes: entered on the day they are published, with their date.</p>
+      <h2>Independence</h2><p>No business link with any government, agency or application service. We earn no commission on any application.</p>
+    </>}
+    {lang === 'fr' && <>
+      <h1>Politique éditoriale et corrections</h1>
+      <p>Un prix faux, et un voyageur paie un site copie ou rate son vol. Voici d’où viennent nos chiffres, qui en répond et ce que nous faisons quand l’un d’eux est faux.</p>
+      <h2>Responsabilité</h2><p>{AUTHOR_NAME} répond de chaque prix, liste et date affichés. Signalez un écart avec une page officielle à <a href={mail}>{CONTACT_EMAIL}</a> ; nous le vérifions à la source.</p>
+      <h2>Sources primaires uniquement</h2><p>Chaque prix vient du texte public qui le fixe : barème du Home Office, règlement canadien, Federal Register, pages officielles australiennes et néo-zélandaises. Rien n’est repris d’une agence ou d’un autre site. Un chiffre que nous n’avons pas pu lire nous-mêmes n’est pas publié.</p>
+      <h2>Estimations, toujours signalées</h2><p>Les montants en euros sont des conversions au taux de référence BCE d’un jour indiqué, pas le montant que votre banque débitera, et ils sont présentés comme tels partout.</p>
+      <h2>Contrôles avant publication</h2><p>Chaque build passe les tests du moteur (prix, listes, validité, dates) ; un écart bloque la publication.</p>
+      <h2>Rythme</h2><p>Taux de change et pages officielles : relus par un script chaque jour ouvré. Changements de prix : saisis le jour de leur publication, avec leur date.</p>
+      <h2>Indépendance</h2><p>Aucun lien commercial avec une administration, une agence ou un service de demande. Nous ne touchons aucune commission.</p>
+    </>}
+    {lang === 'de' && <>
+      <h1>Redaktionelle Grundsätze und Korrekturen</h1>
+      <p>Eine falsche Gebühr, und jemand zahlt einer Nachbau-Seite oder verpasst den Flug. Hier steht, woher unsere Zahlen kommen, wer für sie einsteht und was wir tun, wenn eine nicht stimmt.</p>
+      <h2>Verantwortung</h2><p>{AUTHOR_NAME} steht für jede angezeigte Gebühr, Liste und jedes Datum ein. Eine Abweichung von einer amtlichen Seite melden Sie an <a href={mail}>{CONTACT_EMAIL}</a>; wir prüfen sie an der Quelle.</p>
+      <h2>Nur Primärquellen</h2><p>Jede Gebühr stammt aus dem amtlichen Text, der sie festlegt: Gebührentabelle des Home Office, kanadische Verordnung, Federal Register, amtliche Seiten Australiens und Neuseelands. Nichts wird von einer Agentur oder einer anderen Seite übernommen. Eine Zahl, die wir nicht selbst lesen konnten, erscheint nicht.</p>
+      <h2>Schätzungen, immer gekennzeichnet</h2><p>Beträge in Euro sind Umrechnungen zum EZB-Referenzkurs eines genannten Tages, nicht der Betrag, den Ihre Bank abbucht, und heißen überall so.</p>
+      <h2>Prüfungen vor der Veröffentlichung</h2><p>Jeder Build führt die Tests des Rechenkerns aus (Gebühren, Listen, Gültigkeit, Daten); eine Abweichung stoppt die Veröffentlichung.</p>
+      <h2>Rhythmus</h2><p>Kurse und amtliche Seiten: an jedem Werktag von einem Skript gelesen. Gebührenänderungen: am Tag ihrer Veröffentlichung eingetragen, mit Datum.</p>
+      <h2>Unabhängigkeit</h2><p>Keine geschäftliche Verbindung zu einer Behörde, Agentur oder einem Antragsdienst. Wir erhalten keine Provision.</p>
+    </>}
+    {lang === 'nl' && <>
+      <h1>Redactiestatuut en correctiebeleid</h1>
+      <p>Een fout tarief, en een reiziger betaalt een nagemaakte site of mist zijn vlucht. Hier staat waar onze cijfers vandaan komen, wie ervoor instaat en wat we doen als er een niet klopt.</p>
+      <h2>Verantwoordelijkheid</h2><p>{AUTHOR_NAME} staat in voor elk getoond tarief, elke lijst en elke datum. Meld een afwijking van een officiële pagina aan <a href={mail}>{CONTACT_EMAIL}</a>; we controleren het bij de bron.</p>
+      <h2>Alleen primaire bronnen</h2><p>Elk tarief komt uit de officiële tekst die het vastlegt: tarieventabel van het Home Office, Canadese verordening, Federal Register, officiële pagina’s van Australië en Nieuw-Zeeland. Niets wordt overgenomen van een bureau of een andere site. Een cijfer dat we niet zelf konden lezen, wordt niet gepubliceerd.</p>
+      <h2>Schattingen, altijd aangeduid</h2><p>Bedragen in euro zijn omrekeningen tegen de ECB-referentiekoers van een vermelde dag, niet het bedrag dat uw bank afschrijft, en heten overal zo.</p>
+      <h2>Controles vóór publicatie</h2><p>Elke build draait de tests van de rekenkern (tarieven, lijsten, geldigheid, data); een afwijking houdt de publicatie tegen.</p>
+      <h2>Ritme</h2><p>Koersen en officiële pagina’s: elke werkdag door een script gelezen. Tariefwijzigingen: ingevoerd op de dag van publicatie, met datum.</p>
+      <h2>Onafhankelijkheid</h2><p>Geen zakelijke band met een overheid, bureau of aanvraagdienst. Wij krijgen geen commissie.</p>
+    </>}
+  </div>
+</PageLayout>

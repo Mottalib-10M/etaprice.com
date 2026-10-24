@@ -1,0 +1,21 @@
+{
+ "name": "ETA Price",
+ "short_name": "ETA Price",
+ "description": "Prix officiel de l'ETA britannique, de l'eTA canadienne, de l'ETA australienne, de la NZeTA et de l'ESTA selon la nationalité, avec le seul site officiel.",
+ "start_url": "/en/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#1D4E89",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+# ETA Price
+
+> Official fees of the electronic travel authorisations (UK ETA, US ESTA, Canada eTA, Australia ETA and eVisitor, New Zealand NZeTA, EU ETIAS), applied to the traveller's passport and group, converted to euros at the ECB reference rate. Published by Radif Partners. Not a government site, not a visa agency: it files no application and sends the reader to the official site only.
+
+Data: fees, nationality lists and validity read from GOV.UK (Home Office fee tables), the US Federal Register and 8 CFR 217, canada.ca and the Immigration and Refugee Protection Regulations, the Australian Department of Home Affairs, Immigration New Zealand and the European Commission; ECB euro reference rates. Each page shows the date the data was read. Updated by a script every working day.
+
+## Main pages (English)
+- [UK ETA: official fee and who needs it](/en/): checker by passport and group
+- [UK ETA cost](/en/uk-eta-cost/)
+- [UK ETA application](/en/uk-eta-application/)
+- [Do I need an ETA for the UK](/en/do-i-need-an-eta-for-the-uk/)
+- [UK ETA for US citizens](/en/uk-eta-for-us-citizens/)
+- [UK ETA processing time](/en/uk-eta-processing-time/)
+- [ESTA USA](/en/esta-usa/), [ESTA cost](/en/esta-cost/), [ESTA application](/en/esta-application/), [ESTA validity](/en/esta-validity/), [ESTA status](/en/esta-status/)
+- [US Visa Waiver Program](/en/us-visa-waiver-program/)
+- [Canada eTA](/en/canada-eta/), [Canada eTA cost](/en/canada-eta-cost/), [Canada eTA for green card holders](/en/canada-eta-green-card/)
+- [Australia ETA](/en/australia-eta/), [Australia ETA cost](/en/australia-eta-cost/)
+- [NZeTA](/en/nzeta/), [NZeTA cost](/en/nzeta-cost/)
+- [ETIAS](/en/etias/)
+- [Method and sources](/en/method/)
+
+## Other languages
+- Français : [/fr/](/fr/) (ETA Royaume-Uni, AVE Canada, NZeTA, ETA Australie)
+- Deutsch : [/de/](/de/) (ESTA USA, ETA England, eTA Kanada, ETIAS)
+- Nederlands : [/nl/](/nl/) (ESTA USA, ETA Engeland, eTA Canada, ETIAS)

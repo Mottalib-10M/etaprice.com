@@ -1,0 +1,55 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route, type Locale } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+import { helpers } from '../../lib/helpers';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang); const T = H.T;
+const name = SITE_NAMES[lang];
+const crumb = T({ en: 'Contact', fr: 'Contact', de: 'Kontakt', nl: 'Contact' });
+const description = T({
+  en: `Write to the publisher of ${name}: report a fee that has changed, point to a new nationality list, ask about the method or embed the checker on your own site.`,
+  fr: `Écrire à l’éditeur d’${name} : signaler un prix qui a changé, une liste de nationalités modifiée, poser une question sur la méthode ou intégrer le vérificateur.`,
+  de: `Schreiben Sie dem Herausgeber von ${name}: eine geänderte Gebühr melden, eine neue Länderliste nennen, eine Frage zur Methode stellen oder den Check einbinden.`,
+  nl: `Schrijf de uitgever van ${name}: meld een gewijzigd tarief, wijs op een nieuwe landenlijst, stel een vraag over de methode of sluit de check in op uw eigen site.`,
+});
+const mail = `mailto:${CONTACT_EMAIL}`;
+---
+<PageLayout title={`${crumb} – ${name}`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: crumb, description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: crumb }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>{crumb}</h1>
+    {lang === 'en' && <>
+      <p>One address, read every week: <a href={mail}>{CONTACT_EMAIL}</a>. There is no phone line and we call nobody back: this site sells nothing.</p>
+      <h2>Report an error</h2><p>Give the destination, the passport, the figure shown and the official page that says something else. A confirmed error is corrected and becomes a test, as the <a href={route('editorial', lang)}>editorial policy</a> sets out.</p>
+      <h2>What we cannot do</h2><p>We file no application, cannot check the status of yours and cannot speed up a decision. Only the government services listed in the <a href={route('method', lang)}>method</a> can do that.</p>
+      <h2>Embed the checker</h2><p>Travel agents, schools, clubs and newsrooms can embed the checker free of charge: the code is on the <a href={route('widget', lang)}>embed page</a>.</p>
+      <h2>Publisher</h2>
+    </>}
+    {lang === 'fr' && <>
+      <p>Une adresse, lue chaque semaine : <a href={mail}>{CONTACT_EMAIL}</a>. Pas de téléphone, et nous ne rappelons personne : ce site ne vend rien.</p>
+      <h2>Signaler une erreur</h2><p>Indiquez la destination, le passeport, le chiffre affiché et la page officielle qui dit autre chose. Une erreur confirmée est corrigée et devient un test, comme le prévoit la <a href={route('editorial', lang)}>politique éditoriale</a>.</p>
+      <h2>Ce que nous ne pouvons pas faire</h2><p>Nous ne déposons aucune demande, ne pouvons pas consulter la vôtre et n’accélérons aucune décision. Seuls les services officiels cités dans la <a href={route('method', lang)}>méthode</a> le peuvent.</p>
+      <h2>Intégrer le vérificateur</h2><p>Agences, écoles, associations et rédactions peuvent l’intégrer gratuitement : le code est sur la page <a href={route('widget', lang)}>intégrer le vérificateur</a>.</p>
+      <h2>Éditeur</h2>
+    </>}
+    {lang === 'de' && <>
+      <p>Eine Adresse, jede Woche gelesen: <a href={mail}>{CONTACT_EMAIL}</a>. Es gibt keine Telefonnummer, und wir rufen niemanden zurück: diese Seite verkauft nichts.</p>
+      <h2>Einen Fehler melden</h2><p>Nennen Sie Reiseziel, Pass, die angezeigte Zahl und die amtliche Seite, die etwas anderes sagt. Ein bestätigter Fehler wird korrigiert und als Test aufgenommen, wie es die <a href={route('editorial', lang)}>redaktionellen Grundsätze</a> vorsehen.</p>
+      <h2>Was wir nicht können</h2><p>Wir stellen keine Anträge, können Ihren Antrag nicht einsehen und beschleunigen keine Entscheidung. Das können nur die amtlichen Dienste, die in der <a href={route('method', lang)}>Methodik</a> stehen.</p>
+      <h2>Den Check einbinden</h2><p>Reisebüros, Schulen, Vereine und Redaktionen können den Check kostenlos einbinden: der Code steht auf der Seite <a href={route('widget', lang)}>Check einbinden</a>.</p>
+      <h2>Herausgeber</h2>
+    </>}
+    {lang === 'nl' && <>
+      <p>Eén adres, elke week gelezen: <a href={mail}>{CONTACT_EMAIL}</a>. Er is geen telefoonlijn en we bellen niemand terug: deze site verkoopt niets.</p>
+      <h2>Een fout melden</h2><p>Vermeld de bestemming, het paspoort, het getoonde cijfer en de officiële pagina die iets anders zegt. Een bevestigde fout wordt verbeterd en een test, zoals het <a href={route('editorial', lang)}>redactiestatuut</a> voorziet.</p>
+      <h2>Wat we niet kunnen doen</h2><p>Wij dienen geen aanvragen in, kunnen uw aanvraag niet inzien en versnellen geen beslissing. Dat kunnen alleen de officiële diensten uit de <a href={route('method', lang)}>methode</a>.</p>
+      <h2>De check insluiten</h2><p>Reisbureaus, scholen, verenigingen en redacties kunnen de check gratis insluiten: de code staat op de pagina <a href={route('widget', lang)}>check insluiten</a>.</p>
+      <h2>Uitgever</h2>
+    </>}
+    <LegalIdentity lang={lang} />
+    <p>{T({ en: `${AUTHOR_NAME} is responsible for the content of ${name}; full details are in the`, fr: `${AUTHOR_NAME} est responsable du contenu d’${name} ; tous les détails figurent dans les`, de: `${AUTHOR_NAME} ist für den Inhalt von ${name} verantwortlich; die vollständigen Angaben stehen im`, nl: `${AUTHOR_NAME} is verantwoordelijk voor de inhoud van ${name}; de volledige gegevens staan in het` })} <a href={route('terms', lang)}>{T({ en: 'legal notice', fr: 'mentions légales', de: 'Impressum', nl: 'colofon' })}</a>. {T({ en: 'Page reviewed on', fr: 'Page relue le', de: 'Seite geprüft am', nl: 'Pagina nagekeken op' })} {H.date(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

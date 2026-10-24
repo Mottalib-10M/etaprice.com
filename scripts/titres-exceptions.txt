@@ -1,0 +1,6 @@
+# « uk eta » (10 k – 100 k/mois, KP 2026-10-24) : le pays fait partie du nom que tape la personne ; « UK ETA » est le nom officiel sur GOV.UK.
+UK ETA
+# « canada eta » (1 k – 10 k/mois) : nom du dispositif tel que tapé, « Canada eTA » sur canada.ca.
+Canada eTA
+# « australia eta » (1 k – 10 k/mois) : nom du dispositif tel que tapé.
+Australia ETA

@@ -1,0 +1,36 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route, type Locale } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+import { helpers } from '../../lib/helpers';
+import { EMBED } from '../../lib/embed';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang); const T = H.T;
+const e = EMBED[lang];
+const code = `<iframe src="${SITE_URL}/embed/${e.slug}/" title="${e.title}" width="100%" height="900" style="border:0;max-width:1100px" loading="lazy"></iframe>`;
+const title = T({ en: 'Embed the travel authorisation checker on your site', fr: 'Intégrer le vérificateur d’autorisation de voyage', de: 'Den Einreise-Check auf Ihrer Seite einbinden', nl: 'De reisvergunning-check op uw site insluiten' });
+const description = T({
+  en: 'Embed the checker for the UK ETA, ESTA, Canadian eTA, Australian ETA and NZeTA free of charge as an iframe: one code to copy, no sign-up, no cookie, always up to date.',
+  fr: 'Intégrez gratuitement le vérificateur ETA, ESTA, AVE, ETA australienne et NZeTA en iframe : un code à copier, sans inscription, sans cookie, toujours à jour.',
+  de: 'Binden Sie den Check für UK-ETA, ESTA, kanadische eTA, australische ETA und NZeTA kostenlos als iframe ein: ein Code, ohne Anmeldung, ohne Cookie, immer aktuell.',
+  nl: 'Sluit de check voor UK-ETA, ESTA, Canadese eTA, Australische ETA en NZeTA gratis in als iframe: één code, zonder registratie, zonder cookie, altijd actueel.',
+});
+const crumb = T({ en: 'Embed the checker', fr: 'Intégrer le vérificateur', de: 'Check einbinden', nl: 'Check insluiten' });
+---
+<PageLayout title={title} description={description} lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: T({ en: 'Home', fr: 'Accueil', de: 'Startseite', nl: 'Home' }), path: route('home', lang) }, { name: crumb, path: route('widget', lang) }])]} breadcrumbs={[{ label: crumb }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{crumb}</h1>
+    <p class="mt-3 text-lg text-navy-700">{T({ en: 'One code to copy, no sign-up and no fee. Travel agents, schools, clubs and newsrooms set it up in a minute.', fr: 'Un code à copier, sans inscription ni frais. Agences, écoles, associations et rédactions l’installent en une minute.', de: 'Ein Code zum Kopieren, ohne Anmeldung und ohne Kosten. Reisebüros, Schulen, Vereine und Redaktionen bauen ihn in einer Minute ein.', nl: 'Eén code om te kopiëren, zonder registratie of kosten. Reisbureaus, scholen, verenigingen en redacties plaatsen hem in een minuut.' })}</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code}</code></pre>
+    <p>{T({ en: 'Terms: the link under the checker stays visible, the content is not altered, and it is provided without warranty. When a government changes a fee, your page is up to date without you doing anything.', fr: 'Conditions : le lien sous le vérificateur reste visible, le contenu n’est pas modifié, il est fourni sans garantie. Quand une administration change un prix, votre page est à jour sans que vous ayez rien à faire.', de: 'Bedingungen: der Link unter dem Check bleibt sichtbar, der Inhalt wird nicht verändert, er wird ohne Gewähr bereitgestellt. Ändert eine Behörde eine Gebühr, ist Ihre Seite ohne Ihr Zutun aktuell.', nl: 'Voorwaarden: de link onder de check blijft zichtbaar, de inhoud wordt niet gewijzigd, hij wordt zonder garantie aangeboden. Wijzigt een overheid een tarief, dan is uw pagina zonder uw toedoen bij.' })}</p>
+    <p>{T({ en: 'Other languages:', fr: 'Autres langues :', de: 'Andere Sprachen:', nl: 'Andere talen:' })} {Object.values(EMBED).filter((x) => x.slug !== e.slug).map((x, i) => <>{i > 0 && ' · '}<code>{`${SITE_URL}/embed/${x.slug}/`}</code></>)}</p>
+    <p>{T({ en: 'What your visitors enter stays in their browser and the embedded frame sets no cookie. Questions via the', fr: 'Ce que vos visiteurs saisissent reste dans leur navigateur et le cadre intégré ne dépose aucun cookie. Questions via la', de: 'Was Ihre Besucher eingeben, bleibt in ihrem Browser, und der eingebettete Rahmen setzt kein Cookie. Fragen über die', nl: 'Wat uw bezoekers invullen blijft in hun browser en het ingesloten kader plaatst geen cookie. Vragen via de' })} <a href={route('contact', lang)}>{T({ en: 'contact page', fr: 'page contact', de: 'Kontaktseite', nl: 'contactpagina' })}</a>.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src={`/embed/${e.slug}/`} title={e.title} width="100%" height="900" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

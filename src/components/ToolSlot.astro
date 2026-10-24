@@ -1,0 +1,23 @@
+---
+/** Rend le simulateur d'une page (ToolSpec) ; `secondary` = mini-simulateur du corps (data-simulateur-secondaire). */
+import { Checker, Cost, Overcharge, Validity, ApplyBy, Denied, Etias } from './outils/Tools';
+import type { ToolSpec } from '../lib/guide-types';
+import type { Locale } from '../i18n/routes';
+import { route } from '../i18n/routes';
+import { REF_DAY } from '../lib/helpers';
+import { nationalityOptions } from '../lib/countries';
+interface Props { spec: ToolSpec; lang: Locale; id: string; secondary?: boolean }
+const { spec, lang, id, secondary = false } = Astro.props;
+const NAT: Record<Locale, string> = { en: 'US', fr: 'FR', de: 'DE', nl: 'NL' };
+const nat = spec.nat ?? NAT[lang];
+const nats = nationalityOptions(lang);
+const methodHref = route('method', lang);
+const dest = spec.dest ?? 'GB';
+---
+{spec.kind === 'checker' && <Checker client:load lang={lang} refDay={REF_DAY} id={id} nats={nats} nat={nat} dests={spec.dests ?? [dest]} methodHref={methodHref} />}
+{spec.kind === 'cost' && <Cost client:load lang={lang} refDay={REF_DAY} id={id} nats={nats} nat={nat} dest={dest} methodHref={methodHref} secondary={secondary} />}
+{spec.kind === 'overcharge' && <Overcharge client:load lang={lang} refDay={REF_DAY} id={id} dest={dest} secondary={secondary} methodHref={methodHref} />}
+{spec.kind === 'validity' && <Validity client:load lang={lang} refDay={REF_DAY} id={id} dest={dest} secondary={secondary} />}
+{spec.kind === 'applyby' && <ApplyBy client:load lang={lang} refDay={REF_DAY} id={id} dest={dest} secondary={secondary} />}
+{spec.kind === 'denied' && <Denied client:load lang={lang} refDay={REF_DAY} id={id} secondary={secondary} />}
+{spec.kind === 'etias' && <Etias client:load lang={lang} refDay={REF_DAY} id={id} secondary={secondary} methodHref={methodHref} />}

@@ -1,0 +1,269 @@
+{
+  "retrieved_at": "2026-10-24",
+  "_note": "Libellés et adresses des sources citées sur les pages. Les montants et les listes de pays sont dans data/authorisations.json (régénéré par scripts/update-data.mjs) ; ETIAS et les autres faits relus à la main sont ici, chacun avec sa source.",
+  "etias": {
+    "fee": {
+      "amount": 20,
+      "currency": "EUR"
+    },
+    "feeExemptUnder": 18,
+    "feeExemptOver": 70,
+    "validityYears": 3,
+    "operational": false,
+    "startDate": null,
+    "statusReadOn": "2026-10-24",
+    "statusNote": "Aucune date de mise en service publiée par la Commission ou eu-LISA au 2026-10-24 ; l'annonce du 17/07/2025 visait « le dernier trimestre de 2026 »."
+  },
+  "usIneligibleSince": "2011-03-01",
+  "usVwpStay": 90,
+  "ukStayMonths": 6,
+  "sources": {
+    "govukEta": {
+      "url": "https://www.gov.uk/eta",
+      "label": {
+        "en": "GOV.UK: Get an electronic travel authorisation (ETA) to visit the UK",
+        "fr": "GOV.UK : obtenir une autorisation de voyage électronique (ETA) pour le Royaume-Uni (en anglais)",
+        "de": "GOV.UK: Electronic Travel Authorisation (ETA) für das Vereinigte Königreich (englisch)",
+        "nl": "GOV.UK: Electronic Travel Authorisation (ETA) voor het Verenigd Koninkrijk (Engels)"
+      }
+    },
+    "govukEtaApply": {
+      "url": "https://www.gov.uk/eta/apply",
+      "label": {
+        "en": "GOV.UK: apply for an ETA (official form and UK ETA app)",
+        "fr": "GOV.UK : demander l’ETA (formulaire officiel et application UK ETA)",
+        "de": "GOV.UK: ETA beantragen (amtliches Formular und App UK ETA)",
+        "nl": "GOV.UK: ETA aanvragen (officieel formulier en app UK ETA)"
+      }
+    },
+    "govukFees": {
+      "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table",
+      "label": {
+        "en": "Home Office: immigration and nationality fees (fee tables of 8 April and 8 October 2026)",
+        "fr": "Home Office : barème des frais d’immigration (tableaux du 8 avril et du 8 octobre 2026)",
+        "de": "Home Office: Gebührentabellen für Einwanderung (8. April und 8. Oktober 2026)",
+        "nl": "Home Office: tarieventabellen immigratie (8 april en 8 oktober 2026)"
+      }
+    },
+    "govukEtaList": {
+      "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-eta-national-list",
+      "label": {
+        "en": "Immigration Rules: Appendix ETA National List",
+        "fr": "Immigration Rules : liste des nationalités soumises à l’ETA (Appendix ETA National List)",
+        "de": "Immigration Rules: Liste der ETA-Staaten (Appendix ETA National List)",
+        "nl": "Immigration Rules: lijst van ETA-landen (Appendix ETA National List)"
+      }
+    },
+    "govukVisaList": {
+      "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-visitor-visa-national-list",
+      "label": {
+        "en": "Immigration Rules: Appendix Visitor, visa national list",
+        "fr": "Immigration Rules : liste des nationalités soumises au visa visiteur",
+        "de": "Immigration Rules: Liste der visumpflichtigen Staaten",
+        "nl": "Immigration Rules: lijst van visumplichtige landen"
+      }
+    },
+    "irpr": {
+      "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2002-227/FullText.html",
+      "urlFr": "https://laws-lois.justice.gc.ca/fra/reglements/DORS-2002-227/TexteComplet.html",
+      "label": {
+        "en": "Immigration and Refugee Protection Regulations (SOR/2002-227), sections 7.01, 12.05, 190, 294.1 and 296",
+        "fr": "Règlement sur l’immigration et la protection des réfugiés (DORS/2002-227), articles 7.01, 12.05, 190, 294.1 et 296",
+        "de": "Kanadische Einwanderungsverordnung IRPR (SOR/2002-227), Art. 7.01, 12.05, 190, 294.1 und 296 (englisch)",
+        "nl": "Canadese immigratieverordening IRPR (SOR/2002-227), art. 7.01, 12.05, 190, 294.1 en 296 (Engels)"
+      }
+    },
+    "caEta": {
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html",
+      "urlFr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/visiter-canada/ave.html",
+      "label": {
+        "en": "Government of Canada: electronic travel authorization (eTA), official application",
+        "fr": "Gouvernement du Canada : autorisation de voyage électronique (AVE), demande officielle",
+        "de": "Regierung Kanadas: eTA, amtlicher Antrag (englisch)",
+        "nl": "Regering van Canada: eTA, officiële aanvraag (Engels)"
+      }
+    },
+    "frNotice": {
+      "url": "https://www.federalregister.gov/documents/2026/10/01/2026-20185/certain-dhs-immigration-related-fees-required-by-hr-1-fiscal-year-2027-adjustments-for-inflation",
+      "label": {
+        "en": "Federal Register 2026-20185 (1 October 2026): FY 2027 ESTA fee",
+        "fr": "Federal Register 2026-20185 (1er octobre 2026) : frais ESTA de l’exercice 2027",
+        "de": "Federal Register 2026-20185 (1. Oktober 2026): ESTA-Gebühr für das Haushaltsjahr 2027",
+        "nl": "Federal Register 2026-20185 (1 oktober 2026): ESTA-tarief begrotingsjaar 2027"
+      }
+    },
+    "estaApply": {
+      "url": "https://esta.cbp.dhs.gov/",
+      "label": {
+        "en": "CBP: official ESTA application and status check",
+        "fr": "CBP : demande officielle d’ESTA et suivi du dossier",
+        "de": "CBP: amtlicher ESTA-Antrag und Statusabfrage",
+        "nl": "CBP: officiële ESTA-aanvraag en status"
+      }
+    },
+    "cbpEsta": {
+      "url": "https://www.cbp.gov/travel/international-visitors/esta",
+      "label": {
+        "en": "CBP: Electronic System for Travel Authorization (ESTA)",
+        "fr": "CBP : Electronic System for Travel Authorization (ESTA)",
+        "de": "CBP: Electronic System for Travel Authorization (ESTA)",
+        "nl": "CBP: Electronic System for Travel Authorization (ESTA)"
+      }
+    },
+    "dhsVwp": {
+      "url": "https://www.dhs.gov/visa-waiver-program",
+      "label": {
+        "en": "DHS: Visa Waiver Program, list of the 42 participating countries",
+        "fr": "DHS : programme d’exemption de visa, liste des 42 pays",
+        "de": "DHS: Visa Waiver Program, Liste der 42 Teilnehmerstaaten",
+        "nl": "DHS: Visa Waiver Program, lijst van de 42 deelnemende landen"
+      }
+    },
+    "dhsVwpReq": {
+      "url": "https://www.dhs.gov/visa-waiver-program-requirements",
+      "label": {
+        "en": "DHS: Visa Waiver Program passport requirements (e-passport)",
+        "fr": "DHS : passeport exigé pour l’exemption de visa (passeport électronique)",
+        "de": "DHS: Passanforderungen des Visa Waiver Program (E-Pass)",
+        "nl": "DHS: paspoorteisen van het Visa Waiver Program (e-paspoort)"
+      }
+    },
+    "ecfr2175": {
+      "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-217/section-217.5",
+      "label": {
+        "en": "8 CFR 217.5: validity of an ESTA (two years)",
+        "fr": "8 CFR 217.5 : validité de l’ESTA (deux ans)",
+        "de": "8 CFR 217.5: Gültigkeit der ESTA (zwei Jahre)",
+        "nl": "8 CFR 217.5: geldigheid van de ESTA (twee jaar)"
+      }
+    },
+    "usc1187": {
+      "url": "https://www.law.cornell.edu/uscode/text/8/1187",
+      "label": {
+        "en": "8 U.S.C. 1187(a)(12): presence in Iraq, Syria or a listed country since 1 March 2011",
+        "fr": "8 U.S.C. 1187(a)(12) : séjour en Irak, en Syrie ou dans un pays désigné depuis le 1er mars 2011",
+        "de": "8 U.S.C. 1187(a)(12): Aufenthalt in Irak, Syrien oder einem gelisteten Staat seit dem 1. März 2011",
+        "nl": "8 U.S.C. 1187(a)(12): verblijf in Irak, Syrië of een aangewezen land sinds 1 maart 2011"
+      }
+    },
+    "auEta": {
+      "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/electronic-travel-authority-601",
+      "label": {
+        "en": "Department of Home Affairs: Electronic Travel Authority (subclass 601)",
+        "fr": "Department of Home Affairs : Electronic Travel Authority (sous-classe 601)",
+        "de": "Department of Home Affairs: Electronic Travel Authority (Subclass 601)",
+        "nl": "Department of Home Affairs: Electronic Travel Authority (subclass 601)"
+      }
+    },
+    "auEvisitor": {
+      "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/evisitor-651",
+      "label": {
+        "en": "Department of Home Affairs: eVisitor (subclass 651)",
+        "fr": "Department of Home Affairs : eVisitor (sous-classe 651)",
+        "de": "Department of Home Affairs: eVisitor (Subclass 651)",
+        "nl": "Department of Home Affairs: eVisitor (subclass 651)"
+      }
+    },
+    "nzNzeta": {
+      "url": "https://www.immigration.govt.nz/visas/new-zealand-electronic-travel-authority-nzeta/",
+      "label": {
+        "en": "Immigration New Zealand: NZeTA",
+        "fr": "Immigration New Zealand : NZeTA",
+        "de": "Immigration New Zealand: NZeTA",
+        "nl": "Immigration New Zealand: NZeTA"
+      }
+    },
+    "nzFees": {
+      "url": "https://www.immigration.govt.nz/assets/inz/documents/media/immigration-fee-and-levy-table-rates-from-1-october-2024.pdf",
+      "label": {
+        "en": "Immigration New Zealand: fee and levy table from 1 October 2024 (NZeTA and IVL)",
+        "fr": "Immigration New Zealand : barème des frais et de la taxe IVL au 1er octobre 2024",
+        "de": "Immigration New Zealand: Gebühren und IVL ab 1. Oktober 2024",
+        "nl": "Immigration New Zealand: tarieven en IVL vanaf 1 oktober 2024"
+      }
+    },
+    "nzWaiver": {
+      "url": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
+      "label": {
+        "en": "Immigration New Zealand: visa waiver countries and territories",
+        "fr": "Immigration New Zealand : pays dispensés de visa",
+        "de": "Immigration New Zealand: visumfreie Staaten",
+        "nl": "Immigration New Zealand: visumvrije landen"
+      }
+    },
+    "etiasFee": {
+      "url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en",
+      "label": {
+        "en": "European Commission (17 July 2025): the ETIAS fee will be EUR 20",
+        "fr": "Commission européenne (17 juillet 2025) : l’ETIAS coûtera 20 €",
+        "de": "Europäische Kommission (17. Juli 2025): ETIAS kostet 20 Euro",
+        "nl": "Europese Commissie (17 juli 2025): ETIAS kost 20 euro"
+      }
+    },
+    "etiasReg": {
+      "url": "https://eur-lex.europa.eu/eli/reg/2018/1240/oj",
+      "label": {
+        "en": "Regulation (EU) 2018/1240 establishing ETIAS",
+        "fr": "Règlement (UE) 2018/1240 portant création de l’ETIAS",
+        "de": "Verordnung (EU) 2018/1240 über ETIAS",
+        "nl": "Verordening (EU) 2018/1240 tot oprichting van ETIAS"
+      }
+    },
+    "etiasSite": {
+      "url": "https://travel-europe.europa.eu/etias_en",
+      "label": {
+        "en": "Official EU site for EES and ETIAS",
+        "fr": "Site officiel de l’UE pour l’EES et l’ETIAS",
+        "de": "Offizielle EU-Seite zu EES und ETIAS",
+        "nl": "Officiële EU-site over EES en ETIAS"
+      }
+    },
+    "ecb": {
+      "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "label": {
+        "en": "European Central Bank: euro foreign exchange reference rates",
+        "fr": "Banque centrale européenne : taux de change de référence de l’euro",
+        "de": "Europäische Zentralbank: Euro-Referenzkurse",
+        "nl": "Europese Centrale Bank: euro-referentiekoersen"
+      }
+    },
+    "govukEuVisit": {
+      "url": "https://www.gov.uk/guidance/visiting-the-uk-as-an-eu-eea-or-swiss-citizen",
+      "label": {
+        "en": "GOV.UK: visiting the UK as an EU, EEA or Swiss citizen (passport, identity cards, school trips)",
+        "fr": "GOV.UK : se rendre au Royaume-Uni en tant que citoyen de l’UE, de l’EEE ou suisse (passeport, carte d’identité, voyages scolaires)",
+        "de": "GOV.UK: Einreise ins Vereinigte Königreich für Bürger der EU, des EWR und der Schweiz (Pass, Personalausweis)",
+        "nl": "GOV.UK: naar het Verenigd Koninkrijk als burger van de EU, de EER of Zwitserland (paspoort, identiteitskaart)"
+      }
+    }
+  },
+  "esta": {
+    "_source": "Federal Register 2026-20185 (1/10/2026), section II.C et tableau 1 ; 8 CFR 217.5(h) pour l'ancien montant",
+    "travelPromotion": 17,
+    "hr1Fee": 13,
+    "hr1Since": "2025-09-30",
+    "fy2026Since": "2026-01-01",
+    "before2025": 21
+  },
+  "usVwpFacts": {
+    "_source": "DHS, page Visa Waiver Program et Visa Waiver Program Requirements (lues le 2026-10-24)",
+    "ePassportSince": "2016-04-01",
+    "romaniaRemoved": "2025-05-02"
+  },
+  "caFacts": {
+    "_source": "canada.ca, pages eTA « How to apply » et « After you apply » (lues par la Wayback Machine le 2026-10-24) ; RIPR art. 190",
+    "usPrExemptSince": "2022-04-26",
+    "idMyConditionalSince": "2026-05-26",
+    "docsWithinHours": 72
+  },
+  "auFacts": {
+    "_source": "Department of Home Affairs, pages ETA 601 et eVisitor 651 (data/sources.json, lues le 2026-10-24)",
+    "validityMonths": 12,
+    "stayMonths": 3
+  },
+  "nzFacts": {
+    "_source": "Immigration New Zealand, page NZeTA (capture du 2026-10-13)",
+    "appGroupMax": 10,
+    "allowHours": 72
+  }
+}

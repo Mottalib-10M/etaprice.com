@@ -1,0 +1,24 @@
+# Relit les barèmes officiels chaque lundi et chaque jour ouvré pour le taux BCE, puis rebâtit le site.
+# Ne tourne qu'une fois le dépôt créé. Le script s'arrête sans rien écrire si une valeur attendue manque.
+name: update-data
+on:
+  schedule:
+    - cron: '30 16 * * 1-5'   # après la publication des taux BCE (vers 16 h CET)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/update-data.mjs
+      - run: npm ci && npx vitest run
+      - name: Commit si les données ont changé
+        run: |
+          git config user.name "Radif Partners"; git config user.email "amradif@gmail.com"
+          git add data/authorisations.json data/fx.json
+          git diff --cached --quiet || git commit -m "Données officielles relues le $(date -u +%F)"
+          git push

@@ -1,0 +1,86 @@
+---
+/** À propos (page de confiance, RECETTE §8) : qui publie, pourquoi, d'où viennent les chiffres, ce que le site n'est pas. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route, type Locale } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { helpers } from '../../lib/helpers';
+import { F } from '../../content/facts';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang); const T = H.T;
+const f = F(H);
+const crumb = T({ en: 'About', fr: 'À propos', de: 'Über uns', nl: 'Over ons' });
+const name = SITE_NAMES[lang];
+const title = T({
+  en: `ETA fees at ${name}: who reads the official prices and why`,
+  fr: `Prix des ETA : qui édite ${name} et d’où vient le chiffre`,
+  de: `Einreisegebühren: wer ${name} herausgibt und prüft`,
+  nl: `Reisvergunningtarieven: wie ${name} uitgeeft en nakijkt`,
+});
+const description = T({
+  en: `Who publishes ${name}, why it gives the official fee of each travel authorisation with the only place to apply, where the figures come from, how to write.`,
+  fr: `Qui édite ${name}, pourquoi il donne le prix officiel de chaque autorisation de voyage et la seule adresse de demande, et d’où viennent les chiffres.`,
+  de: `Wer ${name} herausgibt, warum es die amtliche Gebühr jeder Einreisegenehmigung mit der Antragsadresse nennt, woher die Zahlen kommen, wie Sie uns erreichen.`,
+  nl: `Wie ${name} uitgeeft, waarom het het officiële tarief van elke reisvergunning met het enige aanvraagadres geeft, waar de cijfers vandaan komen, hoe u mailt.`,
+});
+const mail = `mailto:${CONTACT_EMAIL}`;
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: T({ en: 'Home', fr: 'Accueil', de: 'Startseite', nl: 'Home' }), path: route('home', lang) }, { name: crumb, path: route('about', lang) }])]} breadcrumbs={[{ label: crumb }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{T({ en: `About ${name}`, fr: `À propos d’${name}`, de: `Über ${name}`, nl: `Over ${name}` })}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    {lang === 'en' && <>
+      <p>{name} is published by Radif Partners. It answers one question before a trip to the United Kingdom, the United States, Canada, Australia or New Zealand: which travel authorisation does my passport need, what does the government actually charge for it, and where is the one official place to apply?</p>
+      <h2>Why this site exists</h2>
+      <p>Since the UK made its ETA compulsory for Europeans and Americans, and since the ESTA fee went up again in 2026, travellers meet the same three difficulties: prices that differ from one page to the next, dates that have moved on, and copies of government forms that charge several times the fee. We wanted one place where every price is read in the text that sets it, dated, multiplied for the whole family and converted into euros, with a link to the government service and nothing else.</p>
+      <p><strong>{name} gives, for your passport and your group, the official fee of each travel authorisation, read in the Home Office fee table, the Canadian regulations, the US Federal Register and the Australian and New Zealand official pages, converted at the ECB rate of {f.fxDate}, with the only official address to apply.</strong></p>
+      <h2>Where the figures come from</h2>
+      <p>United Kingdom: GOV.UK and the Home Office fee tables, under the Open Government Licence. Canada: the Immigration and Refugee Protection Regulations on the Justice Laws website. United States: the Federal Register notice of {f.usNoticeDate}, the DHS Visa Waiver Program page and the Code of Federal Regulations, all in the public domain. Australia: the Department of Home Affairs (CC BY 3.0 AU). New Zealand: Immigration New Zealand (CC BY 3.0 NZ). Exchange rates: the European Central Bank. The <a href={route('method', lang)}>method</a> lists every rule and its source.</p>
+      <h2>What we are not</h2>
+      <p>Radif Partners is not a government, not a visa agency and not an intermediary. We file no application, take no payment, earn no commission and link only to the official services. A decision always belongs to the country you are visiting.</p>
+      <h2>Funding and data</h2><p>The site is free and needs no account. The checkers run in your browser and nothing you type is stored. If advertising ever appears, it will never sit above a checker and never be presented as a recommendation.</p>
+      <h2>Four languages</h2><p>The site is written in English, French, German and Dutch, for the travellers who search these questions most: Americans heading to London, French travellers bound for Britain and Canada, Germans and Dutch flying to the United States.</p>
+      <h2>Write to us</h2><p>A fee that has changed, a nationality list that moved, a page that is unclear: <a href={mail}>{CONTACT_EMAIL}</a>. See also the <a href={route('editorial', lang)}>editorial policy</a> and the <a href={route('terms', lang)}>legal notice</a>.</p>
+    </>}
+    {lang === 'fr' && <>
+      <p>{name} est édité par Radif Partners. Le site répond à une question qui se pose avant un voyage au Royaume-Uni, aux États-Unis, au Canada, en Australie ou en Nouvelle-Zélande : de quelle autorisation mon passeport a-t-il besoin, combien l’administration la fait-elle vraiment payer, et où se trouve la seule adresse officielle pour la demander ?</p>
+      <h2>Pourquoi ce site</h2>
+      <p>Depuis que le Royaume-Uni impose l’ETA aux Européens et que les frais de l’ESTA ont encore augmenté en 2026, les voyageurs se heurtent aux mêmes écueils : des prix qui changent d’une page à l’autre, des dates dépassées et des copies de formulaires officiels facturées plusieurs fois le prix. Nous voulions un endroit où chaque montant est lu dans le texte qui le fixe, daté, multiplié pour toute la famille et converti en euros, avec un lien vers le service de l’État et rien d’autre.</p>
+      <p><strong>{name} donne, pour votre passeport et votre groupe, le prix officiel de chaque autorisation de voyage, lu dans le barème du Home Office, le règlement canadien, le Federal Register américain et les pages officielles australiennes et néo-zélandaises, converti au taux BCE du {f.fxDate}, avec la seule adresse officielle de demande.</strong></p>
+      <h2>D’où viennent les chiffres</h2>
+      <p>Royaume-Uni : GOV.UK et les barèmes du Home Office, sous Open Government Licence. Canada : le Règlement sur l’immigration et la protection des réfugiés, sur le site Lois et règlements. États-Unis : l’avis du Federal Register du {f.usNoticeDate}, la page du programme d’exemption de visa du DHS et le Code of Federal Regulations, tous du domaine public. Australie : le Department of Home Affairs (CC BY 3.0 AU). Nouvelle-Zélande : Immigration New Zealand (CC BY 3.0 NZ). Taux de change : la Banque centrale européenne. La <a href={route('method', lang)}>méthode</a> détaille chaque règle et sa source.</p>
+      <h2>Ce que nous ne sommes pas</h2>
+      <p>Radif Partners n’est ni une administration, ni une agence de visas, ni un intermédiaire. Nous ne déposons aucune demande, n’encaissons rien, ne touchons aucune commission et ne renvoyons qu’aux services officiels. La décision appartient toujours au pays où vous allez.</p>
+      <h2>Financement et données</h2><p>Le site est gratuit et sans compte. Les vérificateurs tournent dans votre navigateur et rien de ce que vous saisissez n’est conservé. Si de la publicité apparaît un jour, elle ne sera jamais placée au-dessus d’un vérificateur ni présentée comme une recommandation.</p>
+      <h2>Quatre langues</h2><p>Le site est écrit en français, en anglais, en allemand et en néerlandais, pour les voyageurs qui posent ces questions le plus souvent : Français en route pour Londres ou Montréal, Américains en partance pour le Royaume-Uni, Allemands et Néerlandais qui s’envolent pour les États-Unis.</p>
+      <h2>Nous écrire</h2><p>Un prix qui a changé, une liste de nationalités modifiée, une page peu claire : <a href={mail}>{CONTACT_EMAIL}</a>. Voir aussi la <a href={route('editorial', lang)}>politique éditoriale</a> et les <a href={route('terms', lang)}>mentions légales</a>.</p>
+    </>}
+    {lang === 'de' && <>
+      <p>{name} wird von Radif Partners herausgegeben. Die Seite beantwortet eine Frage vor jeder Reise nach Großbritannien, in die USA, nach Kanada, Australien oder Neuseeland: Welche Einreisegenehmigung braucht mein Pass, was verlangt die Behörde wirklich dafür, und wo ist die einzige amtliche Adresse für den Antrag?</p>
+      <h2>Warum es diese Seite gibt</h2>
+      <p>Seit Großbritannien die ETA auch für Europäer verlangt und die ESTA-Gebühr 2026 erneut gestiegen ist, stoßen Reisende auf dieselben Hürden: Preise, die von Seite zu Seite abweichen, überholte Daten und Nachbauten amtlicher Formulare, die ein Mehrfaches der Gebühr kosten. Wir wollten einen Ort, an dem jeder Betrag in dem Text gelesen wird, der ihn festlegt, mit Datum, für die ganze Familie gerechnet und in Euro umgerechnet, mit einem Link zum amtlichen Dienst und sonst nichts.</p>
+      <p><strong>{name} nennt für Ihren Pass und Ihre Reisegruppe die amtliche Gebühr jeder Einreisegenehmigung, gelesen in der Gebührentabelle des Home Office, der kanadischen Verordnung, dem US Federal Register und den amtlichen Seiten Australiens und Neuseelands, umgerechnet zum EZB-Kurs vom {f.fxDate}, mit der einzigen amtlichen Antragsadresse.</strong></p>
+      <h2>Woher die Zahlen kommen</h2>
+      <p>Großbritannien: GOV.UK und die Gebührentabellen des Home Office, unter der Open Government Licence. Kanada: die Immigration and Refugee Protection Regulations auf der Seite Justice Laws. USA: die Bekanntmachung im Federal Register vom {f.usNoticeDate}, die Seite des DHS zum Visa Waiver Program und der Code of Federal Regulations, alle gemeinfrei. Australien: das Department of Home Affairs (CC BY 3.0 AU). Neuseeland: Immigration New Zealand (CC BY 3.0 NZ). Wechselkurse: die Europäische Zentralbank. Die <a href={route('method', lang)}>Methodik</a> nennt jede Regel mit ihrer Quelle.</p>
+      <h2>Was wir nicht sind</h2>
+      <p>Radif Partners ist keine Behörde, keine Visumagentur und kein Vermittler. Wir stellen keine Anträge, kassieren nichts, erhalten keine Provision und verlinken nur auf die amtlichen Dienste. Die Entscheidung trifft immer das Land, in das Sie reisen.</p>
+      <h2>Finanzierung und Daten</h2><p>Die Seite ist kostenlos und ohne Konto. Die Prüfrechner laufen in Ihrem Browser, nichts von dem, was Sie eingeben, wird gespeichert. Falls hier eines Tages Werbung erscheint, steht sie nie über einem Rechner und nie als Empfehlung.</p>
+      <h2>Vier Sprachen</h2><p>Die Seite gibt es auf Deutsch, Englisch, Französisch und Niederländisch, für die Reisenden, die diese Fragen am häufigsten stellen: Deutsche und Niederländer auf dem Weg in die USA oder nach England, Franzosen nach Kanada, Amerikaner nach London.</p>
+      <h2>Schreiben Sie uns</h2><p>Eine geänderte Gebühr, eine neue Länderliste, eine unklare Seite: <a href={mail}>{CONTACT_EMAIL}</a>. Siehe auch die <a href={route('editorial', lang)}>redaktionellen Grundsätze</a> und das <a href={route('terms', lang)}>Impressum</a>.</p>
+    </>}
+    {lang === 'nl' && <>
+      <p>{name} wordt uitgegeven door Radif Partners. De site beantwoordt één vraag vóór een reis naar het Verenigd Koninkrijk, de Verenigde Staten, Canada, Australië of Nieuw-Zeeland: welke reisvergunning heeft mijn paspoort nodig, wat rekent de overheid er echt voor, en waar is het enige officiële adres om aan te vragen?</p>
+      <h2>Waarom deze site bestaat</h2>
+      <p>Sinds het Verenigd Koninkrijk de ETA ook van Europeanen vraagt en het ESTA-tarief in 2026 opnieuw omhoogging, lopen reizigers tegen dezelfde problemen aan: prijzen die per pagina verschillen, achterhaalde data en nagemaakte overheidsformulieren die een veelvoud van het tarief kosten. Wij wilden één plek waar elk bedrag gelezen wordt in de tekst die het vastlegt, gedateerd, voor het hele gezin gerekend en omgerekend in euro, met een link naar de overheidsdienst en verder niets.</p>
+      <p><strong>{name} geeft voor uw paspoort en uw reisgezelschap het officiële tarief van elke reisvergunning, gelezen in de tarieventabel van het Home Office, de Canadese verordening, het Amerikaanse Federal Register en de officiële pagina’s van Australië en Nieuw-Zeeland, omgerekend tegen de ECB-koers van {f.fxDate}, met het enige officiële aanvraagadres.</strong></p>
+      <h2>Waar de cijfers vandaan komen</h2>
+      <p>Verenigd Koninkrijk: GOV.UK en de tarieventabellen van het Home Office, onder de Open Government Licence. Canada: de Immigration and Refugee Protection Regulations op de site Justice Laws. Verenigde Staten: de bekendmaking in het Federal Register van {f.usNoticeDate}, de DHS-pagina over het Visa Waiver Program en de Code of Federal Regulations, alle vrij van auteursrecht. Australië: het Department of Home Affairs (CC BY 3.0 AU). Nieuw-Zeeland: Immigration New Zealand (CC BY 3.0 NZ). Wisselkoersen: de Europese Centrale Bank. De <a href={route('method', lang)}>methode</a> geeft elke regel met zijn bron.</p>
+      <h2>Wat we niet zijn</h2>
+      <p>Radif Partners is geen overheid, geen visumbureau en geen tussenpersoon. Wij dienen geen aanvragen in, innen niets, krijgen geen commissie en verwijzen alleen naar de officiële diensten. De beslissing ligt altijd bij het land waar u naartoe gaat.</p>
+      <h2>Financiering en gegevens</h2><p>De site is gratis en zonder account. De checks draaien in uw browser en niets van wat u invult wordt bewaard. Komt hier ooit reclame, dan staat die nooit boven een check en nooit als aanbeveling.</p>
+      <h2>Vier talen</h2><p>De site bestaat in het Nederlands, het Engels, het Frans en het Duits, voor de reizigers die deze vragen het vaakst stellen: Nederlanders en Duitsers op weg naar Amerika of Engeland, Fransen naar Canada, Amerikanen naar Londen.</p>
+      <h2>Schrijf ons</h2><p>Een tarief dat veranderd is, een gewijzigde landenlijst, een onduidelijke pagina: <a href={mail}>{CONTACT_EMAIL}</a>. Zie ook het <a href={route('editorial', lang)}>redactiestatuut</a> en het <a href={route('terms', lang)}>colofon</a>.</p>
+    </>}
+  </div>
+</PageLayout>

@@ -1,0 +1,13 @@
+/** Répertoire des pages : chaque fichier de `src/content/pages/` est chargé ici. */
+import type { PageDef, Group } from './guide-types';
+const mods = import.meta.glob<{ default: PageDef }>(['../content/pages/*.ts'], { eager: true });
+export const PAGES: PageDef[] = Object.entries(mods)
+  .map(([file, m]) => {
+    const g = m.default;
+    const base = file.split('/').pop()!.replace(/\.ts$/, '');
+    if (g.id !== base) throw new Error(`${file} : id « ${g.id} » différent du nom de fichier`);
+    return g;
+  })
+  .sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
+export const GROUPS: Group[] = ['uk', 'us', 'ca', 'anz', 'eu'];
+export const pageById = (id: string) => PAGES.find((p) => p.id === id);
