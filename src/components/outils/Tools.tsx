@@ -174,10 +174,15 @@ export function Checker({ lang: l, refDay, id, nats, nat: nat0, dests: dests0, m
     </>
   );
   const priced = r.items.filter((i) => i.totalEur != null && (i.perPerson?.amount ?? 0) > 0);
+  // Une seule devise à payer : le total s'affiche dans cette devise (« £20 » pour une ETA britannique), l'euro en
+  // second. Avant le 2026-10-24, la page anglaise annonçait « €23.89 » à un Américain qui paie 20 £.
+  const curs = [...new Set(priced.map((i) => i.total!.currency))];
+  const one = curs.length === 1 ? curs[0] : null;
+  const oneSum = Math.round(priced.reduce((s, i) => s + i.total!.amount, 0) * 100) / 100;
   const result = (
     <>
       <Head label={T(l, { en: `Official total, ${travellers} traveller${travellers > 1 ? 's' : ''}`, fr: `Total officiel, ${travellers} voyageur${travellers > 1 ? 's' : ''}`, de: `Amtlicher Gesamtpreis, ${travellers} ${travellers > 1 ? 'Reisende' : 'Person'}`, nl: `Officieel totaal, ${travellers} ${travellers > 1 ? 'reizigers' : 'reiziger'}` })}
-        value={eur(r.totalEur, l)} sub={priced.length ? priced.map((i) => cur(i.total!, l)).join(' + ') : T(l, { en: 'Nothing to pay for these destinations', fr: 'Rien à payer pour ces destinations', de: 'Für diese Ziele nichts zu zahlen', nl: 'Niets te betalen voor deze bestemmingen' })} />
+        value={one ? cur({ amount: oneSum, currency: one }, l) : eur(r.totalEur, l)} sub={one && one !== 'EUR' ? `≈ ${eur(r.totalEur, l)}` : priced.length && !one ? priced.map((i) => cur(i.total!, l)).join(' + ') : priced.length ? '' : T(l, { en: 'Nothing to pay for these destinations', fr: 'Rien à payer pour ces destinations', de: 'Für diese Ziele nichts zu zahlen', nl: 'Niets te betalen voor deze bestemmingen' })} />
       <ul className="mt-4 space-y-3 text-sm">
         {r.items.map((i) => {
           const by = i.kind === 'eta' || i.kind === 'eta-conditional' ? applyBy(arrival, i.dest) : null;

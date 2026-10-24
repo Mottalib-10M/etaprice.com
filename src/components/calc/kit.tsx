@@ -41,7 +41,7 @@ export function Shell({ form, result, id, after, secondary = false, title }: { f
     </div>
   );
 }
-export const Row2 = ({ children }: { children: ReactNode }) => <div className="grid grid-cols-2 gap-x-4 gap-y-4">{children}</div>;
+export const Row2 = ({ children }: { children: ReactNode }) => <div className="grid gap-x-4 gap-y-4 sm:grid-cols-2">{children}</div>;
 
 export function Head({ label, value, sub }: { label: string; value: string; sub?: string }) {
   const report = useContext(KeyFigure);
