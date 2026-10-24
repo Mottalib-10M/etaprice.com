@@ -1,5 +1,5 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://eta-travel-authorization.example";
+export const SITE_URL = "https://etaprice.com";
 export const SITE_NAMES: Record<string, string> = {"en": "ETA Price", "fr": "ETA Price", "de": "ETA Price", "nl": "ETA Price"};
 export const LANG_TAGS: Record<string, string> = {"en": "en", "fr": "fr-FR", "de": "de-DE", "nl": "nl-NL"};
 export const OG_LOCALES: Record<string, string> = {"en": "en_US", "fr": "fr_FR", "de": "de_DE", "nl": "nl_NL"};
@@ -17,7 +17,7 @@ export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners reads 
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"en": ["UK Electronic Travel Authorisation fee", "Canada electronic travel authorization (eTA)", "Australian ETA and eVisitor", "New Zealand NZeTA and visitor levy", "ESTA fee and Visa Waiver Program"], "fr": ["Prix de l'ETA britannique", "Autorisation de voyage électronique du Canada (AVE)", "ETA et eVisitor australiens", "NZeTA et taxe touristique néo-zélandaise", "ESTA et programme d'exemption de visa"], "de": ["Gebühr der britischen ETA", "Kanadische eTA", "Australische ETA und eVisitor", "NZeTA und Touristenabgabe IVL", "ESTA-Gebühr und Visa Waiver Program"], "nl": ["Prijs van de Britse ETA", "Canadese eTA", "Australische ETA en eVisitor", "NZeTA en toeristenheffing IVL", "ESTA-kosten en Visa Waiver Program"]};
-export const CONTACT_EMAIL = "contact@eta-travel-authorization.example";
+export const CONTACT_EMAIL = "contact@etaprice.com";
 export const THEME_COLOR = '#1D4E89';
 export const LOGO_SYMBOL = '✈';
 export const BING_VERIFY_CODE = '';

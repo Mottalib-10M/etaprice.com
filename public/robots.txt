@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://eta-travel-authorization.example/sitemap-index.xml
+Sitemap: https://etaprice.com/sitemap-index.xml
