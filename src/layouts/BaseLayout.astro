@@ -1,5 +1,6 @@
 ---
 import { displayDate } from '../lib/format';
+import Licences from '../components/Licences.astro';
 import '../styles/global.css';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import { consentStrings } from '../data/consent-strings';
@@ -161,6 +162,7 @@ const crumbAside = Astro.slots.has('crumb-aside') ? (await Astro.slots.render('c
             <p>{ui.footerBrowser}</p>
             <p>{ui.asOf} {YEAR}, {ui.lastUpdated} <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, LANG_TAGS[lang])}</time></p>
             <p>&copy; {new Date().getFullYear()} {SITE_NAMES[lang]}. {ui.footerDisclaimer}</p>
+            <Licences lang={lang} />
             {(GA4_ID || CLARITY_ID) && CONSENT_MODE !== 'none' && <p><button type="button" data-consent-manage class="underline hover:text-navy-900">{consentStrings(lang).manage}</button></p>}
           </div>
         </div>

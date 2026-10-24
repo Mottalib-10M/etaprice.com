@@ -232,7 +232,7 @@ if (problems.length) { console.error('ARRÊT, rien n’est écrit :\n- ' + probl
 
 const prevFile = path.join(ROOT, 'data/authorisations.json');
 const prev = fs.existsSync(prevFile) ? JSON.parse(fs.readFileSync(prevFile, 'utf8')) : null;
-const out = { generated: today, uk: UK, ca: CA, us: US, au: AU, nz: { ...NZ, nzeta: { app: { amount: 17, currency: 'NZD' }, web: { amount: 23, currency: 'NZD' }, readOn: '2026-10-24', source: 'INZ 11277 10/24, Table of changes to fee and levy rates (from 1 October 2024)' }, ivl: { amount: 100, currency: 'NZD', since: '2024-10-01' }, validityYears: 2 } };
+const out = { generated: today, uk: UK, ca: CA, us: US, au: AU, nz: { ...NZ, nzeta: { app: { amount: 17, currency: 'NZD' }, web: { amount: 23, currency: 'NZD' }, readOn: '2026-10-24', readHow: 'PDF officiel lu à la main le 2026-10-24 ; le script vérifie seulement qu’il est toujours publié', source: 'INZ 11277 10/24, Table of changes to fee and levy rates (from 1 October 2024)' }, ivl: { amount: 100, currency: 'NZD', since: '2024-10-01' }, validityYears: 2 } };
 const changed = prev && JSON.stringify({ ...prev, generated: 0 }) !== JSON.stringify({ ...out, generated: 0 });
 if (DRY) { console.log(JSON.stringify(out, null, 2)); console.log(JSON.stringify(FX)); process.exit(0); }
 fs.writeFileSync(prevFile, JSON.stringify(out, null, 2) + '\n');

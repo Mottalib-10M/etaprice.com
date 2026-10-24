@@ -1,6 +1,7 @@
 ---
 /** À propos (page de confiance, RECETTE §8) : qui publie, pourquoi, d'où viennent les chiffres, ce que le site n'est pas. */
 import PageLayout from '../../layouts/PageLayout.astro';
+import Independence from '../Independence.astro';
 import { AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
 import { route, type Locale } from '../../i18n/routes';
 import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
@@ -27,7 +28,7 @@ const description = T({
 const mail = `mailto:${CONTACT_EMAIL}`;
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: T({ en: 'Home', fr: 'Accueil', de: 'Startseite', nl: 'Home' }), path: route('home', lang) }, { name: crumb, path: route('about', lang) }])]} breadcrumbs={[{ label: crumb }]}>
-  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{T({ en: `About ${name}`, fr: `À propos d’${name}`, de: `Über ${name}`, nl: `Over ${name}` })}</h1></header>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{T({ en: `About ${name}`, fr: `À propos d’${name}`, de: `Über ${name}`, nl: `Over ${name}` })}</h1><Independence lang={lang} /></header>
   <div class="prose prose-slate max-w-none">
     <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
     {lang === 'en' && <>

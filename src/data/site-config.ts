@@ -19,7 +19,7 @@ export const AUTHOR_DESC: Record<string, string> = {"en": "Radif Partners reads 
 export const KNOWS_ABOUT: Record<string, string[]> = {"en": ["UK Electronic Travel Authorisation fee", "Canada electronic travel authorization (eTA)", "Australian ETA and eVisitor", "New Zealand NZeTA and visitor levy", "ESTA fee and Visa Waiver Program"], "fr": ["Prix de l'ETA britannique", "Autorisation de voyage électronique du Canada (AVE)", "ETA et eVisitor australiens", "NZeTA et taxe touristique néo-zélandaise", "ESTA et programme d'exemption de visa"], "de": ["Gebühr der britischen ETA", "Kanadische eTA", "Australische ETA und eVisitor", "NZeTA und Touristenabgabe IVL", "ESTA-Gebühr und Visa Waiver Program"], "nl": ["Prijs van de Britse ETA", "Canadese eTA", "Australische ETA en eVisitor", "NZeTA en toeristenheffing IVL", "ESTA-kosten en Visa Waiver Program"]};
 export const CONTACT_EMAIL = "contact@eta-travel-authorization.example";
 export const THEME_COLOR = '#1D4E89';
-export const LOGO_SYMBOL = 'ETA';
+export const LOGO_SYMBOL = '✈';
 export const BING_VERIFY_CODE = '';
 export const GOOGLE_VERIFY_CODE = '';
 /** Régime : 'none' pour tous les sites (RECETTE §15.6, décision de l'éditeur du 2026-10-06) :

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Independence from '../Independence.astro';
 import { SITE_URL } from '../../data/site-config';
 import { route, type Locale } from '../../i18n/routes';
 import { breadcrumbSchema } from '../../lib/seo';
@@ -21,7 +22,7 @@ const crumb = T({ en: 'Embed the checker', fr: 'Intégrer le vérificateur', de:
 ---
 <PageLayout title={title} description={description} lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: T({ en: 'Home', fr: 'Accueil', de: 'Startseite', nl: 'Home' }), path: route('home', lang) }, { name: crumb, path: route('widget', lang) }])]} breadcrumbs={[{ label: crumb }]} showAuthor={false}>
   <header class="mb-6">
-    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{crumb}</h1>
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{crumb}</h1><Independence lang={lang} />
     <p class="mt-3 text-lg text-navy-700">{T({ en: 'One code to copy, no sign-up and no fee. Travel agents, schools, clubs and newsrooms set it up in a minute.', fr: 'Un code à copier, sans inscription ni frais. Agences, écoles, associations et rédactions l’installent en une minute.', de: 'Ein Code zum Kopieren, ohne Anmeldung und ohne Kosten. Reisebüros, Schulen, Vereine und Redaktionen bauen ihn in einer Minute ein.', nl: 'Eén code om te kopiëren, zonder registratie of kosten. Reisbureaus, scholen, verenigingen en redacties plaatsen hem in een minuut.' })}</p>
   </header>
   <div class="prose prose-slate max-w-none">

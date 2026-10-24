@@ -1,33 +1,33 @@
 {
  "accent": "#1D4E89",
- "symbol": "ETA",
+ "symbol": "✈",
  "variants": [
   {
    "file": "og-en.png",
-   "title": "UK ETA, Canada eTA, ESTA:\nthe official price, nothing more",
+   "title": "UK ETA, Canada eTA, ESTA:\nthe official fee, nothing more",
    "subtitle": "UK £20 · Canada CAD 7 · US $40.62 · Australia · New Zealand",
-   "badge": "Official fees read from government sources",
+   "badge": "Independent site, not a government service",
    "brand": "ETA Price"
   },
   {
    "file": "og-fr.png",
-   "title": "ETA Royaume-Uni, AVE Canada :\nle prix officiel, rien de plus",
+   "title": "ETA Royaume-Uni, AVE Canada :\nle tarif officiel, rien de plus",
    "subtitle": "Royaume-Uni 20 £ · Canada 7 CAD · États-Unis 40,62 $ · Australie · NZ",
-   "badge": "Barèmes officiels relus à la source",
+   "badge": "Site indépendant, non gouvernemental",
    "brand": "ETA Price"
   },
   {
    "file": "og-de.png",
    "title": "ESTA, ETA England, eTA Kanada:\nnur die amtliche Gebühr",
    "subtitle": "USA 40,62 $ · England 20 £ · Kanada 7 CAD · Australien · Neuseeland",
-   "badge": "Amtliche Gebühren, direkt aus den Quellen",
+   "badge": "Unabhängige Website, keine Behörde",
    "brand": "ETA Price"
   },
   {
    "file": "og-nl.png",
-   "title": "ESTA, ETA Engeland, eTA Canada:\nalleen de officiële prijs",
+   "title": "ESTA, ETA Engeland, eTA Canada:\nalleen het officiële tarief",
    "subtitle": "VS $40,62 · Engeland £20 · Canada CAD 7 · Australië · Nieuw-Zeeland",
-   "badge": "Officiële tarieven, rechtstreeks uit de bron",
+   "badge": "Onafhankelijke website, geen overheidsdienst",
    "brand": "ETA Price"
   }
  ]

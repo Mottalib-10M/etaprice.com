@@ -574,6 +574,7 @@
         "currency": "NZD"
       },
       "readOn": "2026-10-24",
+      "readHow": "PDF officiel lu à la main le 2026-10-24 ; le script vérifie seulement qu’il est toujours publié",
       "source": "INZ 11277 10/24, Table of changes to fee and levy rates (from 1 October 2024)"
     },
     "ivl": {

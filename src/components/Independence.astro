@@ -1,0 +1,30 @@
+---
+/**
+ * Mention d'indépendance au premier écran, sous chaque H1 (audit données et droits du 2026-10-24,
+ * règle 4) : le site n'est pas un site officiel, et la demande se fait seulement sur le service
+ * officiel de la destination de la page. `pageId` absent ou sans destination = page générale (accueil, méthode, guides).
+ */
+import type { Locale } from '../i18n/routes';
+import { destOf, type Dest } from '../lib/independence';
+interface Props { lang: Locale; pageId?: string; class?: string }
+const { lang, pageId, class: cls = 'mt-2' } = Astro.props;
+const dest = pageId ? destOf(pageId) : undefined;
+/** Où se fait la demande, avec sa préposition, dans chaque langue. */
+const WHERE: Record<Dest | 'all', Record<Locale, string>> = {
+  uk: { en: 'on GOV.UK or in the official UK ETA app', fr: 'sur GOV.UK ou dans l’application officielle UK ETA', de: 'über GOV.UK oder die amtliche App UK ETA', nl: 'via GOV.UK of de officiële app UK ETA' },
+  us: { en: 'on the official CBP site, esta.cbp.dhs.gov', fr: 'sur le site officiel du CBP, esta.cbp.dhs.gov', de: 'über die amtliche Seite der CBP, esta.cbp.dhs.gov', nl: 'via de officiële site van CBP, esta.cbp.dhs.gov' },
+  ca: { en: 'on the Government of Canada website, canada.ca', fr: 'sur le site du gouvernement du Canada, canada.ca', de: 'über die Website der kanadischen Regierung, canada.ca', nl: 'via de website van de Canadese overheid, canada.ca' },
+  au: { en: 'in the official Australian ETA app of the Department of Home Affairs', fr: 'dans l’application officielle Australian ETA du Department of Home Affairs', de: 'über die amtliche App Australian ETA des Department of Home Affairs', nl: 'via de officiële app Australian ETA van het Department of Home Affairs' },
+  nz: { en: 'in the official NZeTA app or on immigration.govt.nz', fr: 'dans l’application officielle NZeTA ou sur immigration.govt.nz', de: 'über die amtliche App NZeTA oder immigration.govt.nz', nl: 'via de officiële app NZeTA of immigration.govt.nz' },
+  eu: { en: 'on the official EU site, travel-europe.europa.eu, once ETIAS opens', fr: 'sur le site officiel de l’UE, travel-europe.europa.eu, dès l’ouverture de l’ETIAS', de: 'über die amtliche EU-Seite travel-europe.europa.eu, sobald ETIAS startet', nl: 'via de officiële EU-site travel-europe.europa.eu, zodra ETIAS opent' },
+  all: { en: 'with the government service of each country, named on every page', fr: 'auprès du service public de chaque pays, indiqué sur chaque page', de: 'über den staatlichen Dienst des jeweiligen Landes, der auf jeder Seite genannt ist', nl: 'via de overheidsdienst van elk land, die op elke pagina staat' },
+};
+const o = WHERE[dest ?? 'all'][lang];
+const text: Record<Locale, string> = {
+  en: `Independent site, not a government service: you apply only ${o}.`,
+  fr: `Site indépendant, non gouvernemental : la demande se fait uniquement ${o}.`,
+  de: `Unabhängige Website, keine Behörde: Der Antrag läuft nur ${o}.`,
+  nl: `Onafhankelijke website, geen overheidsdienst: u vraagt alleen aan ${o}.`,
+};
+---
+<p data-independance class={`${cls} text-sm font-medium text-navy-700`}>{text[lang]}</p>

@@ -1,0 +1,32 @@
+---
+/**
+ * Attributions exigées par les licences des sources (audit données et droits du 2026-10-24, règle 3),
+ * en pied de toutes les pages et des embeds, chacune avec le lien vers sa licence :
+ *  - OGL v3.0 (GOV.UK, Home Office) : phrase type, en anglais dans toutes les langues ;
+ *  - CC BY 3.0 AU (Department of Home Affairs) : producteur, pages reprises, licence, adaptation ;
+ *  - CC BY 3.0 NZ (Immigration New Zealand) : « © Crown copyright, Immigration New Zealand (immigration.govt.nz) ».
+ */
+import type { Locale } from '../i18n/routes';
+interface Props { lang: Locale; compact?: boolean }
+const { lang, compact = false } = Astro.props;
+const OGL = 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/';
+const CC_AU = 'https://creativecommons.org/licenses/by/3.0/au/';
+const CC_NZ = 'https://creativecommons.org/licenses/by/3.0/nz/';
+const L: Record<Locale, { au: [string, string]; nz: [string, string] }> = {
+  en: { au: ['Australian ETA (subclass 601) and eVisitor (subclass 651) information: Australian Government Department of Home Affairs, licensed under', '; adapted, calculations Radif Partners.'],
+        nz: ['New Zealand visa waiver list, NZeTA page and fee and levy table: © Crown copyright, Immigration New Zealand (immigration.govt.nz), licensed under', '; adapted, calculations Radif Partners.'] },
+  fr: { au: ['Informations sur l’ETA australienne (sous-classe 601) et l’eVisitor (sous-classe 651) : Australian Government Department of Home Affairs, sous licence', ' ; adapté, calculs Radif Partners.'],
+        nz: ['Liste néo-zélandaise des pays dispensés de visa, page NZeTA et barème des frais et de la taxe : © Crown copyright, Immigration New Zealand (immigration.govt.nz), sous licence', ' ; adapté, calculs Radif Partners.'] },
+  de: { au: ['Angaben zur australischen ETA (Subclass 601) und zum eVisitor (Subclass 651): Australian Government Department of Home Affairs, lizenziert unter', '; bearbeitet, Berechnungen Radif Partners.'],
+        nz: ['Neuseeländische Liste der visumfreien Staaten, NZeTA-Seite und Gebühren- und Abgabentabelle: © Crown copyright, Immigration New Zealand (immigration.govt.nz), lizenziert unter', '; bearbeitet, Berechnungen Radif Partners.'] },
+  nl: { au: ['Gegevens over de Australische ETA (subclass 601) en de eVisitor (subclass 651): Australian Government Department of Home Affairs, onder licentie', '; bewerkt, berekeningen Radif Partners.'],
+        nz: ['Nieuw-Zeelandse lijst van visumvrije landen, NZeTA-pagina en tarieven- en heffingentabel: © Crown copyright, Immigration New Zealand (immigration.govt.nz), onder licentie', '; bewerkt, berekeningen Radif Partners.'] },
+};
+const t = L[lang];
+const a = 'underline hover:text-navy-900';
+---
+<div data-licences class={compact ? 'mt-1 space-y-0.5 text-center text-[11px] leading-snug text-navy-600' : 'space-y-1 text-xs text-navy-500'}>
+  <p data-ogl>Contains public sector information licensed under the <a href={OGL} target="_blank" rel="license noopener" class={a}>Open Government Licence v3.0</a>.</p>
+  <p>{t.au[0]} <a href={CC_AU} target="_blank" rel="license noopener" class={a}>CC BY 3.0 AU</a>{t.au[1]}</p>
+  <p>{t.nz[0]} <a href={CC_NZ} target="_blank" rel="license noopener" class={a}>CC BY 3.0 NZ</a>{t.nz[1]}</p>
+</div>

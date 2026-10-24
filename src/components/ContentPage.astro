@@ -6,6 +6,7 @@
  */
 import PageLayout from '../layouts/PageLayout.astro';
 import Clamp from './Clamp.astro';
+import Independence from './Independence.astro';
 import ToolSlot from './ToolSlot.astro';
 import { route, ROUTES, type Locale } from '../i18n/routes';
 import { label } from '../i18n/nav';
@@ -35,6 +36,7 @@ const sources = page.sources.map((k) => ({ name: P.sources[k].label[lang], url: 
   <article>
     <header class="mb-4">
       <h1 class="text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
+      <Independence lang={lang} pageId={page.id} />
       <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
     </header>
     <div data-outil class="mb-4"><ToolSlot spec={page.tool} lang={lang} id={`t-${page.id}`} /></div>
