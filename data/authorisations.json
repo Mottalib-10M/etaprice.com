@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26",
+  "generated": "2026-10-27",
   "uk": {
     "fee": {
       "amount": 20,
@@ -243,7 +243,7 @@
       "ZM",
       "ZW"
     ],
-    "pageUpdated": "2026-10-22",
+    "pageUpdated": "2026-10-27",
     "listUpdated": "2026-03-05"
   },
   "ca": {
@@ -560,7 +560,7 @@
       "VA"
     ],
     "readFrom": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
-    "readOn": "2026-10-26",
+    "readOn": "2026-10-27",
     "ukStayMonths": 6,
     "stayMonths": 3,
     "australiansExempt": true,
