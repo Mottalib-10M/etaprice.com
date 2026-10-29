@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "uk": {
     "fee": {
       "amount": 20,
@@ -560,7 +560,7 @@
       "VA"
     ],
     "readFrom": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
-    "readOn": "2026-10-28",
+    "readOn": "2026-10-29",
     "ukStayMonths": 6,
     "stayMonths": 3,
     "australiansExempt": true,
