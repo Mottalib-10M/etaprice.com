@@ -1,12 +1,12 @@
 {
   "base": "EUR",
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "rates": {
-    "USD": 1.113,
-    "GBP": 0.83578,
-    "AUD": 1.5842,
-    "CAD": 1.5577,
-    "NZD": 1.9817
+    "USD": 1.1172,
+    "GBP": 0.8338,
+    "AUD": 1.5904,
+    "CAD": 1.5606,
+    "NZD": 1.9823
   },
   "source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
 }
