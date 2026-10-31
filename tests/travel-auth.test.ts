@@ -76,10 +76,14 @@ describe('qui a besoin de quoi', () => {
     expect(requirement(d, 'AU', 'NZ', o).kind).toBe('none');
     expect(requirement(d, 'GB', 'NZ', o).notes).toContain('stay-6-months');
   });
-  it('États-Unis : ESTA pour un Néerlandais, rien pour un Canadien, à vérifier pour un pays hors VWP', () => {
+  // Liste VWP : https://www.dhs.gov/visa-waiver-program (lue le 2026-10-31, 42 pays, ni l'Inde ni la Bulgarie).
+  it('États-Unis : ESTA pour un Néerlandais, rien pour un Canadien, visa hors VWP (Inde, Bulgarie), à vérifier pour les Palaos', () => {
     expect(requirement(d, 'NL', 'US', o).scheme).toBe('ESTA');
     expect(requirement(d, 'CA', 'US', o).kind).toBe('none');
-    expect(requirement(d, 'BG', 'US', o).kind).toBe('check');
+    expect(requirement(d, 'BG', 'US', o).kind).toBe('visa');
+    expect(requirement(d, 'IN', 'US', o).kind).toBe('visa');
+    expect(requirement(d, 'IN', 'US', o).perPerson).toBeNull();
+    expect(requirement(d, 'PW', 'US', o).kind).toBe('check');
   });
 });
 

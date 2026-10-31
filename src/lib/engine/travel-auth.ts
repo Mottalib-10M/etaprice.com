@@ -59,6 +59,7 @@ export interface Requirement {
 }
 
 const has = (list: readonly string[], c: string) => list.includes(c);
+const US_OTHER_EXEMPTIONS = ['FM', 'MH', 'PW', 'BS'];
 
 export function ukEtaWaveFor(d: AuthData, nat: string): string | null {
   for (const w of d.uk.etaNationals) if (has(w.countries, nat)) return w.from;
@@ -122,7 +123,11 @@ export function requirement(d: AuthData, nat: string, dest: Dest, o: Options): R
         const fee = estaFeeOn(d, o.applicationDate ?? d.generated); // le prix est celui du jour où la demande est payée
         return r({ kind: 'eta', scheme: 'ESTA', perPerson: fee, parts: [{ label: 'fee', money: fee }], validityMonths: 24, leadDays: null, notes: ['stay-90-days', 'denied-fee', 'apply-early'] });
       }
-      return r({ kind: 'check' });
+      // Hors des pays VWP (liste DHS, 42 pays), l'ESTA n'est pas ouverte : visa visiteur B1/B2, non chiffré (frais
+      // non lus à la source). Restent « à vérifier » les cas d'entrée sans visa propres à quelques pays
+      // (Compacts de libre association : Micronésie, Marshall, Palaos ; Bahamas avec le prédédouanement).
+      if (has(US_OTHER_EXEMPTIONS, nat)) return r({ kind: 'check' });
+      return r({ kind: 'visa', notes: ['us-visitor-visa'] });
     }
   }
 }

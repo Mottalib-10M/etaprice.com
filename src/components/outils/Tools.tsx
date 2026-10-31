@@ -80,6 +80,7 @@ const NOTE: Record<string, Record<L, string>> = {
   'stay-90-days': { en: 'Up to 90 days, tourism or business.', fr: 'Jusqu’à 90 jours, tourisme ou affaires.', de: 'Bis zu 90 Tage, Urlaub oder Geschäftsreise.', nl: 'Tot 90 dagen, toerisme of zaken.' },
   'denied-fee': { en: 'If refused, part of the fee is kept.', fr: 'En cas de refus, une partie des frais est conservée.', de: 'Bei Ablehnung wird ein Teil der Gebühr einbehalten.', nl: 'Bij weigering wordt een deel van het tarief ingehouden.' },
   'apply-early': { en: 'Apply as soon as you start planning.', fr: 'Demandez dès le début des préparatifs.', de: 'Beantragen Sie sie, sobald Sie planen.', nl: 'Vraag aan zodra u begint te plannen.' },
+  'us-visitor-visa': { en: 'Not a Visa Waiver Program country: no ESTA, a B-1 or B-2 visitor visa from a US embassy or consulate.', fr: 'Pays hors du Visa Waiver Program : pas d’ESTA, mais un visa visiteur B-1 ou B-2 auprès d’une ambassade ou d’un consulat américain.', de: 'Kein Land des Visa Waiver Program: keine ESTA, sondern ein B-1- oder B-2-Besuchervisum bei einer US-Botschaft oder einem US-Konsulat.', nl: 'Geen land van het Visa Waiver Program: geen ESTA, maar een B-1- of B-2-bezoekersvisum bij een Amerikaanse ambassade of consulaat.' },
   'canadian-visa-exempt': { en: 'Canadian citizens need no ESTA.', fr: 'Les citoyens canadiens n’ont pas besoin d’ESTA.', de: 'Kanadische Staatsangehörige brauchen keine ESTA.', nl: 'Canadese burgers hebben geen ESTA nodig.' },
 };
 const noteText = (n: string, l: L) => {
@@ -179,10 +180,20 @@ export function Checker({ lang: l, refDay, id, nats, nat: nat0, dests: dests0, m
   const curs = [...new Set(priced.map((i) => i.total!.currency))];
   const one = curs.length === 1 ? curs[0] : null;
   const oneSum = Math.round(priced.reduce((s, i) => s + i.total!.amount, 0) * 100) / 100;
+  // Une destination à visa (ou hors des listes) n'est pas chiffrée : le titre ne doit pas annoncer « rien à payer »
+  // (constat de Sami du 2026-10-28 : passeport indien vers le Royaume-Uni affiché « €0.00 »).
+  const hasVisa = r.items.some((i) => i.kind === 'visa'), hasCheck = r.items.some((i) => i.kind === 'check');
+  const visaHead = T(l, { en: 'Visa required', fr: 'Visa exigé', de: 'Visum nötig', nl: 'Visum nodig' });
+  const checkHead = T(l, { en: 'To check', fr: 'À vérifier', de: 'Zu prüfen', nl: 'Te controleren' });
+  const unpricedSub = hasVisa
+    ? T(l, { en: 'Visa fees are not included: see each destination below', fr: 'Frais de visa non compris : voir chaque destination ci-dessous', de: 'Visagebühren nicht enthalten: siehe die einzelnen Ziele unten', nl: 'Visumkosten niet inbegrepen: zie elke bestemming hieronder' })
+    : T(l, { en: 'Not in the lists we read: check the official site', fr: 'Hors des listes lues : vérifiez sur le site officiel', de: 'Nicht in den gelesenen Listen: amtliche Seite prüfen', nl: 'Niet in de gelezen lijsten: controleer de officiële site' });
+  const pricedSub = one && one !== 'EUR' ? `≈ ${eur(r.totalEur, l)}` : priced.length && !one ? priced.map((i) => cur(i.total!, l)).join(' + ') : '';
   const result = (
     <>
       <Head label={T(l, { en: `Official total, ${travellers} traveller${travellers > 1 ? 's' : ''}`, fr: `Total officiel, ${travellers} voyageur${travellers > 1 ? 's' : ''}`, de: `Amtlicher Gesamtpreis, ${travellers} ${travellers > 1 ? 'Reisende' : 'Person'}`, nl: `Officieel totaal, ${travellers} ${travellers > 1 ? 'reizigers' : 'reiziger'}` })}
-        value={one ? cur({ amount: oneSum, currency: one }, l) : eur(r.totalEur, l)} sub={one && one !== 'EUR' ? `≈ ${eur(r.totalEur, l)}` : priced.length && !one ? priced.map((i) => cur(i.total!, l)).join(' + ') : priced.length ? '' : T(l, { en: 'Nothing to pay for these destinations', fr: 'Rien à payer pour ces destinations', de: 'Für diese Ziele nichts zu zahlen', nl: 'Niets te betalen voor deze bestemmingen' })} />
+        value={!priced.length && (hasVisa || hasCheck) ? (hasVisa ? visaHead : checkHead) : one ? cur({ amount: oneSum, currency: one }, l) : eur(r.totalEur, l)}
+        sub={priced.length ? [pricedSub, hasVisa || hasCheck ? unpricedSub : ''].filter(Boolean).join(' · ') : hasVisa || hasCheck ? unpricedSub : T(l, { en: 'Nothing to pay for these destinations', fr: 'Rien à payer pour ces destinations', de: 'Für diese Ziele nichts zu zahlen', nl: 'Niets te betalen voor deze bestemmingen' })} />
       <ul className="mt-4 space-y-3 text-sm">
         {r.items.map((i) => {
           const by = i.kind === 'eta' || i.kind === 'eta-conditional' ? applyBy(arrival, i.dest) : null;
