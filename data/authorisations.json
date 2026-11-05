@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03",
+  "generated": "2026-11-05",
   "uk": {
     "fee": {
       "amount": 20,
@@ -447,7 +447,7 @@
         "US",
         "VA"
       ],
-      "pageUpdated": "2026-10-12"
+      "pageUpdated": "2026-11-05"
     },
     "evisitor": {
       "fee": {
@@ -492,7 +492,7 @@
         "SM",
         "VA"
       ],
-      "pageUpdated": "2026-09-08"
+      "pageUpdated": "2026-11-05"
     },
     "validity": "12 months or until the passport expires; stays of up to 3 months per entry"
   },
@@ -560,7 +560,7 @@
       "VA"
     ],
     "readFrom": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
-    "readOn": "2026-11-03",
+    "readOn": "2026-11-05",
     "ukStayMonths": 6,
     "stayMonths": 3,
     "australiansExempt": true,
