@@ -32,8 +32,8 @@ const by = H.T({ en: 'By', fr: 'Par', de: 'Von', nl: 'Door' });
 <PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={faqs} sources={sources}>
   <header class="mb-3">
     <h1 style="hyphens: manual" class="text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
-    <Independence lang={lang} />
     <p class="mt-2 text-base text-navy-700 max-sm:text-[0.95rem] sm:text-lg">{x.intro}</p>
+    <Independence lang={lang} />
   </header>
   <div data-outil><ToolSlot spec={x.tool} lang={lang} id="start" /></div>
   <Clamp text={resume} lang={lang} id="clamp-home" sentences={2} class="mt-4" />

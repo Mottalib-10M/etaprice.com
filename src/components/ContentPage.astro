@@ -36,8 +36,8 @@ const sources = page.sources.map((k) => ({ name: P.sources[k].label[lang], url: 
   <article>
     <header class="mb-4">
       <h1 class="text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
-      <Independence lang={lang} pageId={page.id} />
       <p class="mt-2 text-base text-navy-700 sm:text-lg">{x.intro}</p>
+      <Independence lang={lang} pageId={page.id} />
     </header>
     <div data-outil class="mb-4"><ToolSlot spec={page.tool} lang={lang} id={`t-${page.id}`} /></div>
     <Clamp text={resume} lang={lang} id={`clamp-${page.id}`} class="mb-3" />
