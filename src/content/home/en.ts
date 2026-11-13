@@ -7,7 +7,7 @@ export const en: Home = {
   title: 'UK ETA 2026: official £20 fee, who needs it, how to apply',
   description: 'UK ETA, Canada eTA, ESTA, Australia ETA, NZeTA: the official fee for your passport and family, in euros at the ECB rate, with the only official place to apply.',
   h1: 'UK ETA and other travel authorisations: the official price for your passport',
-  intro: 'Pick where you are going, your passport and how many of you travel: the checker gives the authorisation you need, its official fee and the only official site.',
+  intro: 'Pick where you are going, your passport and how many of you travel: the checker gives the authorisation you need, such as the UK ETA, its official fee and the only official site.',
   resume: (h) => {
     const f = F(h);
     return `The UK Electronic Travel Authorisation (ETA) costs ${f.uk} per person since ${f.ukSince}, babies and children included, and it is the only price the Home Office charges: you apply on GOV.UK or in the UK ETA app, usually get a decision within a day (up to three working days), and the ETA then lasts two years or until your passport expires, whichever is sooner. US citizens have needed one since ${f.ukWaveUS}; most Europeans since ${f.ukWaveEU}. The same logic applies elsewhere, with different prices: ${f.ca} for the Canadian eTA (five years, by air only), ${f.us} for the US ESTA since ${f.usSince}, ${f.au} for the Australian ETA app (the eVisitor is free for European passports) and ${f.nzApp} for an NZeTA bought in the app with the tourist levy. The checker above applies these rules to your passport, adds up the whole group and converts the total into euros at the European Central Bank rate of ${f.fxDate}.`;
@@ -34,7 +34,7 @@ export const en: Home = {
       ['Australia', 'ETA 601 / eVisitor 651', `${f.au} / free`, f.auEur, '12 months', 'Australian ETA app / homeaffairs.gov.au'],
       ['New Zealand', 'NZeTA + IVL', `${f.nzApp} (app)`, f.nzAppEur, `${f.nzYears} years`, 'immigration.govt.nz or NZeTA app'],
     ];
-    return `<h2>The five travel authorisations at a glance</h2>
+    return `<h2>UK ETA, ESTA and the other travel authorisations at a glance</h2>
 <p>Five English-speaking countries now ask visitors who do not need a visa to get a digital permission before they board. They share the idea and little else: the fee, the validity, the delay and the way to apply all differ. This table gives the official price per person, read in the text that sets it, with our conversion into euros at the ECB rate of ${f.fxDate}.</p>
 ${h.table(['Country', 'Authorisation', 'Official fee', 'In euros', 'Validity', 'Only place to apply'], rows, `Official fees per person, children included, read on ${f.dataDay}`, ['l', 'l', 'r', 'r', 'l', 'l'])}
 <p>Validity always stops earlier if the passport expires first. The Australian ETA price is the service charge of the official app, the only charge for that visa; the eVisitor is free for European passports. The NZeTA total includes the International Visitor Conservation and Tourism Levy of ${f.ivl}, paid by most visitors at the same time.</p>

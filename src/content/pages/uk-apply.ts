@@ -98,7 +98,7 @@ export default definePage({
     title: 'ETA Großbritannien beantragen: Schritte und Unterlagen 2026',
     description: 'So beantragen Sie die ETA für Großbritannien auf GOV.UK oder in der amtlichen App: Pass, E-Mail, Foto, Zahlung, Kinder, die 16-stellige Nummer und Frist.',
     h1: 'ETA Großbritannien: der amtliche Antrag Schritt für Schritt',
-    intro: 'Prüfen Sie zuerst, ob Ihr Pass eine ETA statt eines Visums braucht, und folgen Sie dann den Schritten unten, nur auf dem amtlichen Dienst.',
+    intro: 'Prüfen Sie zuerst, ob Ihr Pass eine ETA statt eines Visums braucht, und folgen Sie dann den Schritten unten, um sie für Großbritannien zu beantragen, nur auf dem amtlichen Dienst.',
     resume: (h) => {
       const f = F(h);
       return `Deutsche, Österreicher und Schweizer brauchen seit dem ${f.ukWaveEU} für jede Reise nach England, Schottland, Wales oder Nordirland eine elektronische Einreisegenehmigung (ETA), die vor der Abreise beantragt wird. Dafür sind drei Dinge nötig: der Reisepass, mit dem Sie reisen, eine E-Mail-Adresse und ein Zahlungsmittel für die ${f.uk} (Kredit- oder Debitkarte, Apple Pay oder Google Pay). Beantragt wird entweder in der amtlichen App UK ETA, die den Pass und Ihr Gesicht mit der Handykamera erfasst, oder online auf GOV.UK mit einem Foto des Passes und einem Gesichtsfoto. Jeder Reisende, auch ein Baby, braucht einen eigenen Antrag. Die Entscheidung kommt meist innerhalb eines Tages per E-Mail, manchmal erst nach drei Werktagen, mit einer 16-stelligen ETA-Nummer; vorher dürfen Sie nicht reisen. Danach ist die ETA mit dem Pass verknüpft: am Flughafen zeigen Sie nur ihn vor. Sie gilt zwei Jahre oder bis zum Ablauf des Passes. Der Personalausweis reicht für die Einreise nicht.`;
@@ -118,7 +118,7 @@ export default definePage({
 <p>Die ETA gibt es nur für Staaten auf der Liste des Home Office, darunter alle EU-Staaten, die Schweiz, die USA und Kanada. Maßgeblich ist der Pass, nicht der Wohnort: wer in München lebt und einen Pass eines visumpflichtigen Staates hat, braucht ein Besuchervisum für ${f.ukVisa}. Der Check oben wendet die ${h.src('govukEtaList', 'amtliche Liste')} an. Britische und irische Staatsangehörige und wer schon eine Aufenthaltserlaubnis für das Vereinigte Königreich hat (auch Settled oder Pre-settled Status), brauchen keine.</p>
 <h2>Schritt 1: Pass und E-Mail bereitlegen</h2>
 <p>Nehmen Sie den Pass, mit dem Sie reisen. Mit zwei Staatsangehörigkeiten wählen Sie einen Pass und reisen mit genau diesem, denn die ETA folgt der Passnummer. Geben Sie eine Adresse an, die Sie vor der Abreise lesen: Entscheidung und Nummer kommen nur dorthin.</p>
-<h2>Schritt 2: App oder Website</h2>
+<h2>Schritt 2: ETA per App oder Website beantragen</h2>
 <p>In der App UK ETA, die das Home Office im App Store und bei Google Play anbietet, scannen Sie den Pass und danach Ihr Gesicht. Im ${h.src('govukEtaApply', 'GOV.UK-Formular')} (englisch) laden Sie ein Foto des Passes und ein Gesichtsfoto hoch. Die Gebühr ist in beiden Fällen ${f.uk}.</p>
 <h2>Schritt 3: die Fragen beantworten</h2>
 <p>Gefragt werden Kontaktdaten, Beruf, Vorstrafen und frühere Probleme mit der Einwanderung. Antworten Sie genau; eine falsche Angabe kann später zur Einreiseverweigerung führen.</p>
@@ -139,7 +139,7 @@ export default definePage({
     title: 'ETA Engeland aanvragen: de officiële stappen in 2026',
     description: 'Zo vraagt u de ETA voor Engeland aan op GOV.UK of in de officiële app: paspoort, e-mail, foto, betaling, kinderen, het nummer van 16 cijfers en de termijn.',
     h1: 'ETA Engeland: de officiële aanvraag stap voor stap',
-    intro: 'Controleer eerst of uw paspoort een ETA nodig heeft in plaats van een visum, en volg dan de stappen hieronder, alleen op de officiële dienst.',
+    intro: 'Controleer eerst of uw paspoort een ETA nodig heeft in plaats van een visum, en volg dan de stappen hieronder om de ETA voor Engeland aan te vragen, alleen op de officiële dienst.',
     resume: (h) => {
       const f = F(h);
       return `Nederlanders en Belgen hebben sinds ${f.ukWaveEU} voor elke reis naar Engeland, Schotland, Wales of Noord-Ierland een elektronische reisvergunning (ETA) nodig, aan te vragen vóór vertrek. Daarvoor zijn drie dingen nodig: het paspoort waarmee u reist, een e-mailadres en een betaalmiddel voor de ${f.uk} (creditcard, debitcard, Apple Pay of Google Pay). U vraagt aan in de officiële app UK ETA, die het paspoort en uw gezicht met de camera van de telefoon vastlegt, of online op GOV.UK met een foto van het paspoort en een foto van uw gezicht. Elke reiziger, ook een baby, heeft een eigen aanvraag. De beslissing komt meestal binnen een dag per e-mail, soms pas na drie werkdagen, met een ETA-nummer van 16 cijfers; vóór die e-mail mag u niet reizen. Daarna is de ETA aan het paspoort gekoppeld: op de luchthaven of de veerboot toont u alleen dat. Hij geldt twee jaar of tot het paspoort verloopt. De identiteitskaart volstaat niet voor de reis.`;
@@ -159,7 +159,7 @@ export default definePage({
 <p>De ETA bestaat alleen voor de landen op de lijst van het Home Office, waaronder alle EU-landen, Zwitserland, de Verenigde Staten en Canada. Het paspoort beslist, niet de woonplaats: wie in Utrecht woont met een paspoort van een visumplichtig land, heeft een bezoekersvisum van ${f.ukVisa} nodig. De check hierboven past de ${h.src('govukEtaList', 'officiële lijst')} toe. Britse en Ierse staatsburgers en wie al een verblijfsvergunning voor het Verenigd Koninkrijk heeft (ook settled of pre-settled status), hebben er geen nodig.</p>
 <h2>Stap 1: paspoort en e-mail klaarleggen</h2>
 <p>Gebruik het paspoort waarmee u reist. Met twee nationaliteiten kiest u één paspoort en reist u daarmee, want de ETA volgt het paspoortnummer. Geef een adres op dat u vóór vertrek leest: de beslissing en het nummer komen alleen daar.</p>
-<h2>Stap 2: app of website</h2>
+<h2>Stap 2: de ETA voor Engeland aanvragen via app of website</h2>
 <p>In de app UK ETA, die het Home Office in de App Store en Google Play aanbiedt, scant u het paspoort en daarna uw gezicht. Op het ${h.src('govukEtaApply', 'GOV.UK-formulier')} (Engels) uploadt u een foto van het paspoort en een foto van uw gezicht. Het tarief is in beide gevallen ${f.uk}.</p>
 <h2>Stap 3: de vragen beantwoorden</h2>
 <p>Gevraagd worden contactgegevens, beroep, veroordelingen en eerdere problemen met immigratie. Antwoord nauwkeurig; een onjuist antwoord kan later tot weigering aan de grens leiden.</p>

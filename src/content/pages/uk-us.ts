@@ -16,7 +16,7 @@ export default definePage({
     title: 'UK ETA for US citizens: what Americans need for London',
     description: 'Americans have needed a UK ETA since 8 January 2025. The £20 fee in dollars, green card holders, Heathrow layovers, cruises, and the only official way to apply.',
     h1: 'UK ETA for US citizens: the rules for Americans visiting Britain',
-    intro: 'The checker is set to a US passport. Change it for another member of your party, or add travellers to see the total.',
+    intro: 'The checker is set to a US passport, so it shows the UK ETA rules for US citizens. Change it for another member of your party, or add travellers to see the total.',
     resume: (h) => {
       const f = F(h);
       const usd = h.M.toEur(f.A.uk.fee, h.M.FX) * h.M.FX.rates.USD;

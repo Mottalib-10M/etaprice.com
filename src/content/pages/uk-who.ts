@@ -16,7 +16,7 @@ export default definePage({
     title: 'UK ETA requirement: who needs one, who is exempt in 2026',
     description: 'Do you need a UK ETA? Nationality lists, landside and airside transit, residents of Ireland, British and Irish dual citizens, and what an ETA does not allow.',
     h1: 'Do I need an ETA for the UK? The rules for your passport',
-    intro: 'Enter your passport: the checker reads the Home Office lists. The sections below cover the cases a list cannot settle on its own.',
+    intro: 'Enter your passport: the checker reads the Home Office lists behind the UK ETA requirement. The sections below cover the cases a list cannot settle on its own.',
     resume: (h) => {
       const f = F(h);
       return `You need a UK ETA if your passport is on the Home Office ETA list, about ${f.ukEtaCount} nationalities including the United States, Canada, Australia, Japan and every EU country, and you are visiting the UK, Jersey, Guernsey or the Isle of Man for up to six months without a visa or other permission. You do not need one if you are a British or Irish citizen, including a dual citizen, if you already hold a UK visa or permission to live, work or study in the UK (settled or pre-settled status included), if you change planes airside without passing UK border control, or if you live in Ireland and travel from Ireland or the Crown Dependencies. Nationals of the ${f.ukVisaCount} countries on the visa list cannot use an ETA at all and apply for a visitor visa at ${f.ukVisa}. Age makes no difference: a baby on the ETA list needs its own ETA. The checker above applies these lists to your passport.`;
@@ -55,7 +55,7 @@ ${h.table(['ETA required from', 'Nationalities', 'Examples'], rows, `Appendix ET
     title: 'ETA Londres : qui en a besoin, transit, Eurostar, exemptions',
     description: 'Faut-il une ETA pour un week-end à Londres ? Liste des nationalités, Eurostar, ferry, transit à Heathrow, résidents en Irlande, binationaux, voyages scolaires.',
     h1: 'ETA pour Londres : qui en a besoin et dans quels cas s’en passer',
-    intro: 'Indiquez votre passeport : le vérificateur lit les listes du Home Office. Les sections ci-dessous traitent des cas qu’une liste ne tranche pas seule.',
+    intro: 'Indiquez votre passeport : le vérificateur lit les listes du Home Office et dit si l’ETA vous est demandée pour Londres. Les sections ci-dessous traitent des cas qu’une liste ne tranche pas seule.',
     resume: (h) => {
       const f = F(h);
       return `Un week-end à Londres demande, pour un voyageur français, belge, suisse ou canadien, une ETA à ${f.uk} par personne, à obtenir avant de monter dans l’Eurostar, le ferry ou l’avion. La règle vaut pour environ ${f.ukEtaCount} nationalités, toute l’Union européenne comprise, et pour tout séjour de six mois au plus au Royaume-Uni, à Jersey, à Guernesey ou sur l’île de Man. N’en ont pas besoin les citoyens britanniques et irlandais, binationaux compris, les titulaires d’un visa ou d’un titre de séjour britannique (statut de résident permanent ou provisoire inclus), les voyageurs en correspondance côté piste qui ne passent pas le contrôle frontalier, les résidents d’Irlande venant d’Irlande ou des îles Anglo-Normandes, et les élèves inscrits sur le formulaire des voyages scolaires France–Royaume-Uni. Les ressortissants des ${f.ukVisaCount} pays soumis au visa ne peuvent pas utiliser l’ETA et demandent un visa visiteur à ${f.ukVisa}. L’âge ne change rien : un bébé a sa propre ETA.`;
@@ -91,7 +91,7 @@ ${h.table(['ETA required from', 'Nationalities', 'Examples'], rows, `Appendix ET
     title: 'Einreise England 2026: ETA, Reisepass, Transit und Ausnahmen',
     description: 'Einreise nach England 2026: wer eine ETA braucht, warum der Personalausweis nicht reicht, Transit in Heathrow, Wohnsitz in Irland, Doppelpass und Visum.',
     h1: 'Einreise England: was Ihr Pass braucht und wann keine ETA nötig ist',
-    intro: 'Geben Sie Ihren Pass ein: der Check liest die Listen des Home Office. Die Abschnitte unten behandeln die Fälle, die eine Liste allein nicht klärt.',
+    intro: 'Geben Sie Ihren Pass ein: der Check liest die Listen des Home Office für die Einreise nach England. Die Abschnitte unten behandeln die Fälle, die eine Liste allein nicht klärt.',
     resume: (h) => {
       const f = F(h);
       return `Für die Einreise nach England, Schottland, Wales oder Nordirland brauchen Deutsche, Österreicher und Schweizer seit dem ${f.ukWaveEU} zwei Dinge: einen gültigen Reisepass und eine elektronische Einreisegenehmigung (ETA) für ${f.uk} pro Person, die mit diesem Pass verknüpft ist. Der Personalausweis reicht nicht mehr, außer bei Status aus dem EU Settlement Scheme und wenigen anderen Fällen. Die ETA gilt für rund ${f.ukEtaCount} Staatsangehörigkeiten, darunter alle EU-Staaten, und für Aufenthalte bis zu sechs Monaten, auch auf Jersey, Guernsey und der Isle of Man. Keine ETA brauchen britische und irische Staatsangehörige, auch mit doppelter Staatsbürgerschaft, Inhaber eines britischen Visums oder Aufenthaltsrechts, Umsteiger, die die Grenzkontrolle nicht passieren, und Einwohner Irlands, die aus Irland einreisen. Angehörige der ${f.ukVisaCount} visumpflichtigen Staaten können keine ETA nutzen und beantragen ein Besuchervisum für ${f.ukVisa}. Das Alter spielt keine Rolle: auch ein Baby braucht Pass und ETA.`;
@@ -107,7 +107,7 @@ ${h.table(['ETA required from', 'Nationalities', 'Examples'], rows, `Appendix ET
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Reisepass statt Personalausweis</h2>
+      return `<h2>Einreise nach England mit Reisepass statt Personalausweis</h2>
 <p>Seit dem Brexit gelten für Deutsche dieselben Grenzregeln wie für andere Nicht-Briten. ${h.src('govukEuVisit', 'GOV.UK')} nennt nur wenige Fälle, in denen der Personalausweis noch reicht: Status aus dem EU Settlement Scheme, eine entsprechende Familienerlaubnis, eine Grenzgängererlaubnis oder S2-Behandlung. Alle anderen reisen mit Reisepass, und die ETA wird an genau diesen Pass gebunden. Ein Kinderreisepass genügt, solange er gültig ist.</p>
 <h2>ETA oder Visum: der Pass entscheidet</h2>
 <p>Das Home Office führt zwei Listen: Staaten, deren Bürger ohne Visum, aber mit ETA reisen, und Staaten, deren Bürger ein Besuchervisum brauchen. Maßgeblich ist der Pass, nicht der Wohnort und nicht der Abflughafen. Die Europäer sind seit dem ${f.ukWaveEU} dabei, die USA, Kanada und Australien seit dem ${f.ukWaveUS}.</p>

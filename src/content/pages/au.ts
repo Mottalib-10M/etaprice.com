@@ -35,7 +35,7 @@ export default definePage({
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Two schemes, two lists</h2>
+      return `<h2>ETA or eVisitor for Australia: two schemes, two lists</h2>
 <p>The ${h.src('auEta', 'ETA page of Home Affairs')} lists ${f.auEtaCount} passports eligible for the ETA; the ${h.src('auEvisitor', 'eVisitor page')} lists ${f.evCount} European passports eligible for the eVisitor. Many European passports appear on both. Some appear on one only: ETA only, ${etaOnly(h)}; eVisitor only, ${evOnly(h)}.</p>
 ${h.table(['', 'ETA (subclass 601)', 'eVisitor (subclass 651)'], [['How to apply', 'Australian ETA app only', 'Online, Home Affairs'], ['Charge', f.au + ' service charge', 'Free'], ['Validity', `${h.P.auFacts.validityMonths} months or passport`, `${h.P.auFacts.validityMonths} months from grant`], ['Stay per entry', `Up to ${h.P.auFacts.stayMonths} months`, `Up to ${h.P.auFacts.stayMonths} months`]], `Home Affairs pages read on ${f.dataDay}`, ['l', 'l', 'l'])}
 <h2>Applying through the app</h2>
@@ -69,7 +69,7 @@ ${h.table(['', 'ETA (subclass 601)', 'eVisitor (subclass 651)'], [['How to apply
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Deux dispositifs, deux listes</h2>
+      return `<h2>ETA ou eVisitor pour l’Australie : deux dispositifs, deux listes</h2>
 <p>La ${h.src('auEta', 'page ETA du ministère australien')} recense ${f.auEtaCount} passeports admis à l’ETA ; la ${h.src('auEvisitor', 'page eVisitor')} recense ${f.evCount} passeports européens admis à l’eVisitor. Beaucoup de passeports européens figurent sur les deux. Certains sur une seule : ETA seulement, ${etaOnly(h)} ; eVisitor seulement, ${evOnly(h)}.</p>
 ${h.table(['', 'ETA (sous-classe 601)', 'eVisitor (sous-classe 651)'], [['Demande', 'Application Australian ETA uniquement', 'En ligne, Home Affairs'], ['Prix', f.au + ' de frais de service', 'Gratuit'], ['Validité', `${h.P.auFacts.validityMonths} mois ou passeport`, `${h.P.auFacts.validityMonths} mois après délivrance`], ['Séjour par entrée', `${h.P.auFacts.stayMonths} mois au plus`, `${h.P.auFacts.stayMonths} mois au plus`]], `Pages du ministère lues le ${f.dataDay}`, ['l', 'l', 'l'])}
 <h2>La demande par l’application</h2>
@@ -103,7 +103,7 @@ ${h.table(['', 'ETA (sous-classe 601)', 'eVisitor (sous-classe 651)'], [['Demand
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Zwei Verfahren, zwei Listen</h2>
+      return `<h2>ETA oder eVisitor für Australien: zwei Verfahren, zwei Listen</h2>
 <p>Die ${h.src('auEta', 'ETA-Seite des Innenministeriums')} nennt ${f.auEtaCount} Pässe, die für die ETA zugelassen sind; die ${h.src('auEvisitor', 'eVisitor-Seite')} nennt ${f.evCount} europäische Pässe für den eVisitor. Viele europäische Pässe stehen auf beiden Listen. Einige nur auf einer: nur ETA, ${etaOnly(h)}; nur eVisitor, ${evOnly(h)}.</p>
 ${h.table(['', 'ETA (Subclass 601)', 'eVisitor (Subclass 651)'], [['Antrag', 'Nur App Australian ETA', 'Online, Home Affairs'], ['Kosten', f.au + ' Servicegebühr', 'Kostenlos'], ['Gültigkeit', `${h.P.auFacts.validityMonths} Monate oder Pass`, `${h.P.auFacts.validityMonths} Monate ab Erteilung`], ['Aufenthalt pro Einreise', `Bis ${h.P.auFacts.stayMonths} Monate`, `Bis ${h.P.auFacts.stayMonths} Monate`]], `Seiten des Ministeriums, gelesen am ${f.dataDay}`, ['l', 'l', 'l'])}
 <h2>Der Antrag über die App</h2>
@@ -137,7 +137,7 @@ ${h.table(['', 'ETA (Subclass 601)', 'eVisitor (Subclass 651)'], [['Antrag', 'Nu
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Twee regelingen, twee lijsten</h2>
+      return `<h2>ETA of eVisitor voor Australië: twee regelingen, twee lijsten</h2>
 <p>De ${h.src('auEta', 'ETA-pagina van het ministerie')} noemt ${f.auEtaCount} paspoorten die voor de ETA in aanmerking komen; de ${h.src('auEvisitor', 'eVisitor-pagina')} noemt ${f.evCount} Europese paspoorten voor de eVisitor. Veel Europese paspoorten staan op beide. Sommige op één: alleen ETA, ${etaOnly(h)}; alleen eVisitor, ${evOnly(h)}.</p>
 ${h.table(['', 'ETA (subclass 601)', 'eVisitor (subclass 651)'], [['Aanvraag', 'Alleen app Australian ETA', 'Online, Home Affairs'], ['Kosten', f.au + ' servicekosten', 'Gratis'], ['Geldigheid', `${h.P.auFacts.validityMonths} maanden of paspoort`, `${h.P.auFacts.validityMonths} maanden na afgifte`], ['Verblijf per binnenkomst', `Tot ${h.P.auFacts.stayMonths} maanden`, `Tot ${h.P.auFacts.stayMonths} maanden`]], `Pagina’s van het ministerie, gelezen op ${f.dataDay}`, ['l', 'l', 'l'])}
 <h2>De aanvraag via de app</h2>

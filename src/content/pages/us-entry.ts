@@ -43,7 +43,7 @@ export default definePage({
     body: (h) => {
       const f = F(h);
       const rows = regionRows(h, { eu: 'European Union', europe: 'Rest of Europe', asia: 'Asia and Middle East', other: 'Oceania and Americas' });
-      return `<h2>The member countries</h2>
+      return `<h2>Visa Waiver Program member countries</h2>
 <p>The ${h.src('dhsVwp', 'DHS list')} counts ${f.vwpCount} countries. The checker uses that list, read on ${f.dataDay}.</p>
 ${h.table(['Region', 'Members', 'Countries'], rows, 'Visa Waiver Program countries by region', ['l', 'r', 'l'])}
 <h2>The e-passport rule</h2>
@@ -66,7 +66,7 @@ ${h.table(['Region', 'Members', 'Countries'], rows, 'Visa Waiver Program countri
     title: 'Einreise USA 2026: ESTA, E-Pass, 90 Tage und Grenzkontrolle',
     description: 'Einreise in die USA 2026: wer mit ESTA ohne Visum reist, E-Pass mit Chip, 90 Tage pro Aufenthalt, Rückflugticket, Umstieg und die Grenzkontrolle der CBP.',
     h1: 'Einreise USA: was Deutsche, Österreicher und Schweizer brauchen',
-    intro: 'Geben Sie Ihren Pass ein: der Check zeigt, ob Sie mit ESTA im Visa Waiver Program reisen können oder ein Visum brauchen.',
+    intro: 'Geben Sie Ihren Pass ein: der Check zeigt, ob Sie für die Einreise in die USA mit ESTA im Visa Waiver Program reisen können oder ein Visum brauchen.',
     resume: (h) => {
       const f = F(h);
       return `Für die Einreise in die USA als Tourist oder Geschäftsreisender brauchen Deutsche, Österreicher und Schweizer kein Visum, aber zwei Dinge: einen elektronischen Reisepass mit Chip, vorgeschrieben seit dem ${h.date(h.P.usVwpFacts.ePassportSince)}, und eine genehmigte ESTA für ${f.us} pro Person, beantragt auf esta.cbp.dhs.gov, bevor Sie in Flugzeug oder Schiff steigen oder an einer Landgrenze ankommen. Das gilt im Visa Waiver Program für Aufenthalte bis ${f.usStay} Tage, die sich weder verlängern noch in einen anderen Aufenthaltstitel umwandeln lassen. Ein Abstecher nach Kanada, Mexiko oder in die Karibik setzt die ${f.usStay} Tage nicht zurück. Erwartet wird außerdem ein Rück- oder Weiterflugticket. Der Personalausweis reicht nicht, und auch für einen Umstieg in den USA ist die ESTA nötig, weil es an US-Flughäfen keinen Transitbereich ohne Einreise gibt. Wer seit dem ${f.usIneligible} im Irak, in Syrien oder einem gelisteten Staat war, ist gesetzlich ausgeschlossen und braucht ein Visum. Über die Einreise entscheidet am Ende der CBP-Beamte am Flughafen.`;
@@ -82,7 +82,7 @@ ${h.table(['Region', 'Members', 'Countries'], rows, 'Visa Waiver Program countri
     body: (h) => {
       const f = F(h);
       const rows = regionRows(h, { eu: 'Europäische Union', europe: 'Übriges Europa', asia: 'Asien und Naher Osten', other: 'Ozeanien und Amerika' });
-      return `<h2>Die Teilnehmerstaaten</h2>
+      return `<h2>Einreise in die USA: die Teilnehmerstaaten</h2>
 <p>Die ${h.src('dhsVwp', 'Liste des US-Heimatschutzministeriums')} umfasst ${f.vwpCount} Staaten. Der Check verwendet diese Liste, gelesen am ${f.dataDay}.</p>
 ${h.table(['Region', 'Staaten', 'Länder'], rows, 'Staaten des Visa Waiver Program nach Region', ['l', 'r', 'l'])}
 <h2>Der elektronische Reisepass</h2>

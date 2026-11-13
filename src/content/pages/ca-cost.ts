@@ -19,7 +19,7 @@ export default definePage({
     title: 'Canada eTA cost 2026: CAN$7 per person for up to five years',
     description: 'The Canada eTA costs CAN$7 per traveller under the Canadian regulations, children included, for up to five years. Total for your family in dollars and euros.',
     h1: 'Canada eTA cost: the official fee for every traveller',
-    intro: 'Choose your passport and the number of travellers: the calculator multiplies the official fee and converts it into euros at the ECB rate.',
+    intro: 'Choose your passport and the number of travellers: the calculator multiplies the official Canada eTA fee and converts it into euros at the ECB rate.',
     resume: (h) => {
       const f = F(h);
       return `The Canadian eTA costs ${f.ca} per person, the fee set by section 294.1 of the Immigration and Refugee Protection Regulations, about ${f.caEur.replace('≈ ', '')} at the ECB rate of ${f.fxDate}. It is by far the cheapest of the travel authorisations on this site, and the one that lasts longest: up to ${f.caYears} years, or until the passport expires if that comes first, for any number of trips by air. There is no child rate and no family rate: each traveller, babies included, needs an eTA linked to their own passport and pays the same ${f.ca}, so a family of four pays ${f.times(f.A.ca.fee, 4).m}. The fee is paid by card on canada.ca at the end of the form and is not refunded, even if the eTA is refused or not used. A traveller who does not qualify for an eTA applies for a visitor visa, whose processing fee is ${f.caVisa} and which also requires biometrics. Any price above ${f.ca} per person for an eTA includes a third party’s service charge.`;
@@ -34,7 +34,7 @@ export default definePage({
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>The eTA fee by group size</h2>
+      return `<h2>Canada eTA cost by group size</h2>
 <p>The fee is the same for every traveller. This table multiplies ${f.ca} and converts the total at the ECB reference rate of ${f.fxDate}.</p>
 ${h.table(['Travellers', 'Official fee', 'In euros'], rows(h), `Fee under section 294.1 of the Canadian regulations, read on ${f.dataDay}`, ['l', 'r', 'r'])}
 <h2>What you pay for</h2>
@@ -55,7 +55,7 @@ ${h.table(['Travellers', 'Official fee', 'In euros'], rows(h), `Fee under sectio
     title: 'Prix AVE Canada 2026 : 7 $ CA par personne, valable 5 ans',
     description: 'L’AVE pour le Canada coûte 7 $ CA par voyageur selon le règlement canadien, enfants compris, pour cinq ans au plus. Total de la famille en dollars et en euros.',
     h1: 'Prix de l’AVE canadienne : le tarif officiel pour chaque voyageur',
-    intro: 'Choisissez votre passeport et le nombre de voyageurs : le calculateur multiplie le prix officiel et le convertit en euros au taux BCE.',
+    intro: 'Choisissez votre passeport et le nombre de voyageurs : le calculateur multiplie le prix officiel de l’AVE canadienne et le convertit en euros au taux BCE.',
     resume: (h) => {
       const f = F(h);
       return `L’AVE canadienne coûte ${f.ca} par personne, le montant fixé par l’article 294.1 du Règlement sur l’immigration et la protection des réfugiés, soit environ ${f.caEur.replace('≈ ', '')} au taux BCE du ${f.fxDate}. C’est de loin la moins chère des autorisations de voyage présentées ici, et celle qui dure le plus longtemps : jusqu’à ${f.caYears} ans, ou jusqu’à l’expiration du passeport si elle arrive avant, pour autant de voyages en avion que vous voulez. Il n’existe ni tarif enfant ni tarif famille : chaque voyageur, bébé compris, a besoin d’une AVE liée à son propre passeport et paie ${f.ca}, si bien qu’une famille de quatre paie ${f.times(f.A.ca.fee, 4).m}. Le paiement se fait par carte sur canada.ca à la fin du formulaire et n’est jamais remboursé, même si l’AVE est refusée ou inutilisée. Un voyageur qui n’a pas droit à l’AVE demande un visa de visiteur, dont les frais de traitement sont de ${f.caVisa}, avec en plus la biométrie. Tout prix supérieur à ${f.ca} par personne comprend des frais de service d’un intermédiaire.`;
@@ -91,7 +91,7 @@ ${h.table(['Voyageurs', 'Prix officiel', 'En euros'], rows(h), `Frais prévus à
     title: 'eTA Kanada Kosten 2026: 7 CAD pro Person, bis zu 5 Jahre',
     description: 'Die eTA für Kanada kostet laut kanadischer Verordnung 7 CAD pro Person, auch für Kinder, und gilt bis zu fünf Jahre. Ihre Familie in Dollar und in Euro.',
     h1: 'eTA Kanada Kosten: die amtliche Gebühr für jeden Reisenden',
-    intro: 'Wählen Sie Ihren Pass und die Zahl der Reisenden: der Rechner multipliziert die amtliche Gebühr und rechnet sie zum EZB-Kurs in Euro um.',
+    intro: 'Wählen Sie Ihren Pass und die Zahl der Reisenden: der Rechner multipliziert die amtliche Gebühr und rechnet die Kosten der eTA Kanada zum EZB-Kurs in Euro um.',
     resume: (h) => {
       const f = F(h);
       return `Die kanadische eTA kostet ${f.ca} pro Person, so legt es Artikel 294.1 der kanadischen Einwanderungsverordnung fest, rund ${f.caEur.replace('≈ ', '')} zum EZB-Kurs vom ${f.fxDate}. Sie ist mit Abstand die günstigste der hier vorgestellten Reisegenehmigungen und die, die am längsten gilt: bis zu ${f.caYears} Jahre oder bis zum Ablauf des Passes, für beliebig viele Flugreisen. Einen Kinder- oder Familientarif gibt es nicht: jeder Reisende, auch ein Baby, braucht eine eTA zum eigenen Pass und zahlt ${f.ca}, eine vierköpfige Familie also ${f.times(f.A.ca.fee, 4).m}. Bezahlt wird mit Karte auf canada.ca am Ende des Formulars, erstattet wird nichts, auch nicht bei Ablehnung oder wenn die Reise ausfällt. Wer keine eTA bekommen kann, beantragt ein Besuchervisum mit einer Bearbeitungsgebühr von ${f.caVisa} und zusätzlich biometrischen Daten. Jeder Preis über ${f.ca} pro Person für eine eTA enthält die Servicegebühr eines Vermittlers.`;
@@ -106,7 +106,7 @@ ${h.table(['Voyageurs', 'Prix officiel', 'En euros'], rows(h), `Frais prévus à
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Die eTA-Gebühr nach Gruppengröße</h2>
+      return `<h2>eTA Kanada: Kosten nach Gruppengröße</h2>
 <p>Die Gebühr ist für jeden Reisenden gleich. Die Tabelle multipliziert ${f.ca} und rechnet zum EZB-Referenzkurs vom ${f.fxDate} um.</p>
 ${h.table(['Reisende', 'Amtliche Gebühr', 'In Euro'], rows(h), `Gebühr nach Artikel 294.1 der kanadischen Verordnung, gelesen am ${f.dataDay}`, ['l', 'r', 'r'])}
 <h2>Wofür Sie zahlen</h2>
@@ -127,7 +127,7 @@ ${h.table(['Reisende', 'Amtliche Gebühr', 'In Euro'], rows(h), `Gebühr nach Ar
     title: 'eTA Canada kosten 2026: 7 CAD per persoon, tot 5 jaar geldig',
     description: 'De eTA voor Canada kost volgens de Canadese verordening 7 CAD per reiziger, ook voor kinderen, en geldt tot vijf jaar. Totaal voor het gezin in dollar en euro.',
     h1: 'eTA Canada kosten: het officiële tarief voor elke reiziger',
-    intro: 'Kies uw paspoort en het aantal reizigers: de rekenhulp vermenigvuldigt het officiële tarief en rekent het om in euro tegen de ECB-koers.',
+    intro: 'Kies uw paspoort en het aantal reizigers: de rekenhulp vermenigvuldigt het officiële tarief van de eTA Canada en rekent de kosten om in euro tegen de ECB-koers.',
     resume: (h) => {
       const f = F(h);
       return `De Canadese eTA kost ${f.ca} per persoon, zoals artikel 294.1 van de Canadese immigratieverordening bepaalt, ongeveer ${f.caEur.replace('≈ ', '')} tegen de ECB-koers van ${f.fxDate}. Het is veruit de goedkoopste van de reisvergunningen op deze site, en de vergunning die het langst geldt: tot ${f.caYears} jaar of tot het paspoort verloopt, voor zoveel vliegreizen als u wilt. Een kinder- of gezinstarief bestaat niet: elke reiziger, ook een baby, heeft een eTA bij zijn eigen paspoort nodig en betaalt ${f.ca}, een gezin van vier dus ${f.times(f.A.ca.fee, 4).m}. U betaalt met een kaart op canada.ca aan het eind van het formulier, en er wordt niets terugbetaald, ook niet bij weigering of als de reis niet doorgaat. Wie geen eTA kan krijgen, vraagt een bezoekersvisum aan met behandelkosten van ${f.caVisa} en daarnaast biometrie. Elke prijs boven ${f.ca} per persoon voor een eTA bevat servicekosten van een tussenpersoon.`;
@@ -142,7 +142,7 @@ ${h.table(['Reisende', 'Amtliche Gebühr', 'In Euro'], rows(h), `Gebühr nach Ar
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>Het eTA-tarief per grootte van het gezelschap</h2>
+      return `<h2>eTA Canada: kosten per grootte van het gezelschap</h2>
 <p>Het tarief is voor elke reiziger gelijk. De tabel vermenigvuldigt ${f.ca} en rekent om tegen de ECB-referentiekoers van ${f.fxDate}.</p>
 ${h.table(['Reizigers', 'Officieel tarief', 'In euro'], rows(h), `Tarief volgens artikel 294.1 van de Canadese verordening, gelezen op ${f.dataDay}`, ['l', 'r', 'r'])}
 <h2>Waarvoor u betaalt</h2>

@@ -52,7 +52,7 @@ ${h.table(['Travellers', 'App + levy', 'Website + levy'], rows, 'NZeTA and IVL p
     card: 'Qui a besoin de la NZeTA, le prix par application ou en ligne, la taxe touristique et les 72 heures à prévoir.',
     title: 'NZeTA Nouvelle-Zélande 2026 : qui en a besoin, prix et taxe',
     description: 'La NZeTA pour la Nouvelle-Zélande : quels passeports en ont besoin, 17 NZD par l’application ou 23 en ligne, plus 100 NZD de taxe touristique, valable deux ans.',
-    h1: 'NZeTA : qui en a besoin, combien elle coûte, quand la demander',
+    h1: 'NZeTA pour la Nouvelle-Zélande : qui en a besoin, combien elle coûte, quand la demander',
     intro: 'Indiquez votre passeport et choisissez l’application ou le site : le vérificateur lit la liste néo-zélandaise et ajoute la NZeTA et la taxe touristique.',
     resume: (h) => {
       const f = F(h);
@@ -69,7 +69,7 @@ ${h.table(['Travellers', 'App + levy', 'Website + levy'], rows, 'NZeTA and IVL p
     body: (h) => {
       const f = F(h);
       const rows = [1, 2, 4].map((n) => [String(n), h.money({ amount: (f.A.nz.nzeta.app.amount + f.A.nz.ivl.amount) * n, currency: 'NZD' }), h.money({ amount: (f.A.nz.nzeta.web.amount + f.A.nz.ivl.amount) * n, currency: 'NZD' })]);
-      return `<h2>Qui a besoin de la NZeTA</h2>
+      return `<h2>Qui a besoin de la NZeTA pour la Nouvelle-Zélande</h2>
 <p>La ${h.src('nzWaiver', 'liste des pays dispensés de visa')} d’Immigration New Zealand compte ${f.nzCount} pays et territoires dont les citoyens peuvent venir sans visa mais avec une NZeTA. Les citoyens australiens n’ont besoin ni de l’une ni de l’autre. Les autres doivent demander un visa de visiteur. Le vérificateur lit la liste sur une copie archivée de la page officielle du ${h.date(f.A.nz.readOn)} (Internet Archive), car le site d’Immigration New Zealand refuse la lecture automatique.</p>
 <h2>Combien elle coûte</h2>
 <p>Le ${h.src('nzFees', 'barème des frais et de la taxe')} fixe la NZeTA à ${f.nzAppFee} par l’application et ${f.nzWebFee} en ligne, et la taxe à ${f.ivl}. Pour un groupe :</p>
@@ -143,7 +143,7 @@ ${h.table(['Reisende', 'App + Abgabe', 'Website + Abgabe'], rows, 'NZeTA und IVL
     body: (h) => {
       const f = F(h);
       const rows = [1, 2, 4].map((n) => [String(n), h.money({ amount: (f.A.nz.nzeta.app.amount + f.A.nz.ivl.amount) * n, currency: 'NZD' }), h.money({ amount: (f.A.nz.nzeta.web.amount + f.A.nz.ivl.amount) * n, currency: 'NZD' })]);
-      return `<h2>Wie een NZeTA nodig heeft</h2>
+      return `<h2>Wie een NZeTA voor Nieuw-Zeeland nodig heeft</h2>
 <p>De ${h.src('nzWaiver', 'lijst van visumvrije landen')} van Immigration New Zealand telt ${f.nzCount} landen en gebieden waarvan de burgers zonder visum maar met een NZeTA binnenkomen. Australische staatsburgers hebben geen van beide nodig. Alle anderen vragen een bezoekersvisum aan. De check leest de lijst op een gearchiveerde kopie van de officiële pagina van ${h.date(f.A.nz.readOn)} (Internet Archive), omdat de site van Immigration New Zealand automatisch lezen weigert.</p>
 <h2>Wat hij kost</h2>
 <p>De ${h.src('nzFees', 'tarieven- en heffingentabel')} legt de NZeTA vast op ${f.nzAppFee} in de app en ${f.nzWebFee} online, en de heffing op ${f.ivl}. Voor een gezelschap:</p>

@@ -16,7 +16,7 @@ export default definePage({
     title: 'Canada eTA for green card holders: exempt since April 2022',
     description: 'US green card holders have needed no Canada eTA since 26 April 2022, and no visitor visa. The documents to carry, and who the exemption still leaves out.',
     h1: 'Canada eTA for green card holders: what US permanent residents need',
-    intro: 'The checker starts with a passport from India; set “US green card” to yes or no, or pick your own passport, to see the difference.',
+    intro: 'The checker starts with a passport from India; set “US green card” to yes or no, or pick your own passport, to see how the Canada eTA rules change for green card holders.',
     resume: (h) => {
       const f = F(h);
       return `Lawful permanent residents of the United States do not need a Canadian eTA or a Canadian visitor visa, whatever their nationality. The exemption is in section 190 of the Immigration and Refugee Protection Regulations and has applied since ${h.date(h.P.caFacts.usPrExemptSince)}. Green card holders were already exempt from the Canadian visitor visa before that date, but had to buy an eTA at ${f.ca} to fly; since then a permanent resident with a passport from India, China, Nigeria or France travels with two documents: a valid passport from their country of nationality and a valid green card, which airlines check before boarding. The rule covers flights, land crossings and sea arrivals alike. It does not cover people with only a pending green card application, an expired card without an extension notice, or a US visa: they follow the rule for their own passport. Children who are permanent residents need their own card. The checker above shows the result with and without the green card.`;
@@ -31,7 +31,7 @@ export default definePage({
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>The exemption in the regulations</h2>
+      return `<h2>The eTA exemption for green card holders in the regulations</h2>
 <p>Section 190 of the ${h.src('irpr', 'Immigration and Refugee Protection Regulations')} exempts several groups from the visa requirement, and the eTA rules in section 7.01 follow it. Lawful permanent residents of the United States were already exempt from the visitor visa; since ${h.date(h.P.caFacts.usPrExemptSince)} they are exempt from the eTA as well, and need neither the eTA at ${f.ca} nor a visitor visa at ${f.caVisa}.</p>
 ${h.table(['Passport', 'Without a green card', 'With a valid green card'], [[h.land('GB') + ', ' + h.land('FR') + ', ' + h.land('JP'), 'eTA, ' + f.ca, 'Nothing'], [h.land('MX') + ', ' + h.land('BR') + ', ' + h.land('PH'), 'eTA under conditions, or visa', 'Nothing'], [h.land('IN') + ', ' + h.land('CN') + ', ' + h.land('NG'), 'Visitor visa, ' + f.caVisa, 'Nothing']], 'What a traveller needs to fly to Canada', ['l', 'l', 'l'])}
 <h2>Documents to carry</h2>

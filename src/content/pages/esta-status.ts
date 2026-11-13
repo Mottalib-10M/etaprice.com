@@ -53,7 +53,7 @@ ${h.table(['Status on the official site', 'What it means', 'What to do'], [['Aut
     title: 'ESTA Status prüfen: genehmigt, ausstehend oder abgelehnt',
     description: 'So prüfen Sie den ESTA-Status auf esta.cbp.dhs.gov: was genehmigt, ausstehend und abgelehnt bedeutet, was eine Ablehnung kostet, warum dann ein Visum folgt.',
     h1: 'ESTA-Status prüfen: Abfrage und was nach einer Ablehnung zu tun ist',
-    intro: 'Wurde jemand in Ihrer Gruppe abgelehnt, geben Sie die Zahlen ein: der Rechner zeigt, was die CBP einbehalten hat. Die Abfrage des Status folgt unten.',
+    intro: 'Wurde jemand in Ihrer Gruppe abgelehnt, geben Sie die Zahlen ein: der Rechner zeigt, was die CBP einbehalten hat. Wie Sie den ESTA-Status prüfen, steht unten.',
     resume: (h) => {
       const f = F(h);
       return `Den Status einer ESTA prüfen Sie auf der amtlichen Seite esta.cbp.dhs.gov unter der Abfrage eines bestehenden Antrags, entweder mit der Antragsnummer oder mit Passnummer, Geburtsdatum sowie Ausstellungs- und Ablaufdatum des Passes. Die Seite zeigt eines von drei Ergebnissen, auf Englisch: Authorization Approved heißt genehmigt, Sie dürfen reisen, gültig zwei Jahre oder bis zum Ablauf des Passes; Authorization Pending heißt, die CBP hat noch nicht entschieden, und Sie sollten vor einer Buchung, die sich nicht stornieren lässt, erneut nachsehen; Travel Not Authorized heißt abgelehnt, Sie können für diese Reise nicht ohne Visum fahren. Eine Ablehnung ist nicht kostenlos: von den ${f.us} werden ${f.usDenied} für den Betrieb des Systems einbehalten. Laut US-Verordnung ist eine Ablehnung keine Feststellung, dass Sie kein Visum bekommen können, und nicht gerichtlich anfechtbar. Der Weg führt daher über ein Visum bei der US-Botschaft in Berlin oder einem Generalkonsulat. Ein neuer ESTA-Antrag mit denselben Angaben bringt meist dasselbe Ergebnis.`;
@@ -69,7 +69,7 @@ ${h.table(['Status on the official site', 'What it means', 'What to do'], [['Aut
     },
     body: (h) => {
       const f = F(h);
-      return `<h2>So fragen Sie den Status ab</h2>
+      return `<h2>So prüfen Sie den ESTA-Status</h2>
 <p>Öffnen Sie ${h.src('estaApply', 'esta.cbp.dhs.gov')} und wählen Sie die Abfrage eines bestehenden Antrags. Für eine Person genügen Passnummer, Geburtsdatum und Ausstellungs- und Ablaufdatum des Passes, für eine Gruppe die Gruppennummer. Die Antwort ist die, die bei der CBP gespeichert ist: einen anderen Ort, an dem eine ESTA geprüft werden kann, gibt es nicht, und eine fremde Seite kann sie nur für Sie nachschlagen.</p>
 <h2>Die drei Ergebnisse</h2>
 ${h.table(['Status auf der amtlichen Seite', 'Bedeutung', 'Was zu tun ist'], [['Authorization Approved', 'Sie dürfen einsteigen und die Einreise beantragen', 'Ablaufdatum notieren'], ['Authorization Pending', 'Noch keine Entscheidung', 'Vor dem Bezahlen der Reise erneut prüfen'], ['Travel Not Authorized', 'Vorerst keine Reise ohne Visum', 'Visum beantragen']], 'ESTA-Ergebnisse, wie sie auf Englisch auf der CBP-Seite erscheinen', ['l', 'l', 'l'])}

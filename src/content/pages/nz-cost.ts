@@ -16,7 +16,7 @@ export default definePage({
     title: 'NZeTA cost 2026: NZD 117 in the app with the visitor levy',
     description: 'The NZeTA costs NZD 17 in the official app or NZD 23 online, plus the NZD 100 visitor levy most people pay with it. Your group total in dollars and euros.',
     h1: 'NZeTA cost: the authority, the levy and the total per group',
-    intro: 'Choose your passport, the number of travellers and app or website: the calculator applies the Immigration New Zealand prices and converts them to euros.',
+    intro: 'Choose your passport, the number of travellers and app or website: the calculator applies the Immigration New Zealand prices for the NZeTA and converts them to euros.',
     resume: (h) => {
       const f = F(h);
       return `The price of an NZeTA has two parts. The authority itself costs ${f.nzAppFee} when requested in the official NZeTA app and ${f.nzWebFee} on the Immigration New Zealand website. Most travellers also pay, in the same transaction, the International Visitor Conservation and Tourism Levy (IVL) of ${f.ivl}, raised to that amount on ${h.date(f.A.nz.ivl.since)}. The usual total is therefore ${f.nzApp} per person in the app, about ${f.nzAppEur.replace('≈ ', '')} at the ECB rate of ${f.fxDate}, or ${f.nzWeb} on the website, about ${f.nzWebEur.replace('≈ ', '')}. There is no family rate: each traveller, child or adult, has a separate request, so a family of four pays ${f.times({ amount: f.A.nz.nzeta.app.amount + f.A.nz.ivl.amount, currency: 'NZD' }, 4).m} in the app. Both the NZeTA and the levy last ${f.nzYears} years, so the cost per year is half the headline price for a frequent visitor. Any price above these amounts for the same request includes a third party’s own charge.`;

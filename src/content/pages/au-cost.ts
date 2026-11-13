@@ -16,7 +16,7 @@ export default definePage({
     title: 'Australia ETA cost 2026: AUD 20 in the app, eVisitor free',
     description: 'The Australia ETA costs an AUD 20 service charge per person in the official app, and the eVisitor is free for Europeans. Your family total in dollars and euros.',
     h1: 'Australia ETA cost: what each traveller really pays',
-    intro: 'Choose your passport and the number of travellers: the calculator applies the Home Affairs charge and shows when the free eVisitor is open to you.',
+    intro: 'Choose your passport and the number of travellers: the calculator applies the Home Affairs charge for the Australian ETA and shows when the free eVisitor is open to you.',
     resume: (h) => {
       const f = F(h);
       return `The Australian Electronic Travel Authority costs a service charge of ${f.au} per person, about ${f.auEur.replace('≈ ', '')} at the ECB rate of ${f.fxDate}, paid in the official Australian ETA app; the Department of Home Affairs states that there is no other charge for an ETA. The eVisitor, open to European passports, costs nothing at all. Neither has a child rate or a family rate: each family member needs a separate application, so an American family of four pays ${f.times(f.A.au.eta.fee, 4).m}, while a European family of four using the eVisitor pays nothing. Both authorisations are valid for ${h.P.auFacts.validityMonths} months, or until the passport expires if sooner, with stays of up to ${h.P.auFacts.stayMonths} months after each entry; because they last one year rather than two, a frequent visitor pays the ETA charge again every year. A site or app that asks for more than ${f.au} for an ETA, or for any money for an eVisitor, is adding its own charge to a government service.`;
@@ -33,7 +33,7 @@ export default definePage({
       const f = F(h);
       const A = f.A;
       const rows = [1, 2, 3, 4, 5, 6].map((n) => [String(n), f.times(A.au.eta.fee, n).m, f.times(A.au.eta.fee, n).e, h.money({ amount: 0, currency: 'AUD' })]);
-      return `<h2>Totals by group size</h2>
+      return `<h2>Australia ETA cost by group size</h2>
 <p>The ETA is charged per person in the app; the eVisitor costs nothing for anyone. This table converts the ETA total at the ECB reference rate of ${f.fxDate}.</p>
 ${h.table(['Travellers', 'ETA in the app', 'In euros', 'eVisitor'], rows, `Home Affairs charges read on ${f.dataDay}`, ['l', 'r', 'r', 'r'])}
 <h2>Who pays what</h2>

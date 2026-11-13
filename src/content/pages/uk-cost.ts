@@ -16,7 +16,7 @@ export default definePage({
     title: 'UK ETA cost 2026: £20 per person, children included',
     description: 'The UK ETA costs £20 per traveller since 8 April 2026, babies included. Work out the total for your family in pounds and euros, and spot any site markup.',
     h1: 'UK ETA cost: the official fee for your whole group',
-    intro: 'Choose your passport and the number of travellers: the calculator multiplies the official fee and converts it into euros at the ECB rate.',
+    intro: 'Choose your passport and the number of travellers: the calculator multiplies the official UK ETA fee and converts it into euros at the ECB rate.',
     resume: (h) => {
       const f = F(h);
       return `A UK Electronic Travel Authorisation costs ${f.uk} per person, the fee set by the Home Office fee table from ${f.ukSince}, when it rose from ${f.ukOld}. There is no reduced rate: a baby, a child and an adult each need their own ETA and each pays the same ${f.uk}, so a family of four pays ${f.times(f.A.uk.fee, 4).m}, about ${f.times(f.A.uk.fee, 4).e.replace('≈ ', '')} at the ECB rate of ${f.fxDate}. The fee is the same on GOV.UK and in the official UK ETA app, it is not refunded once you have applied, and paying more elsewhere does not buy a faster decision. One ETA covers any number of visits of up to six months for two years, or until the passport expires if that comes first. Travellers who need a visa instead pay ${f.ukVisa} for a six-month visitor visa and cannot use the ETA. The calculator above gives the total for your group and checks that your passport is on the ETA list.`;
@@ -57,8 +57,8 @@ ${h.table(['Travellers', 'Official fee', 'In euros'], rows, `UK ETA fee from ${f
     card: 'Le prix officiel de 20 £, pour une personne ou toute la famille, en livres et en euros.',
     title: 'Prix ETA Royaume-Uni 2026 : 20 £ par voyageur, enfant inclus',
     description: 'L’ETA pour le Royaume-Uni coûte 20 £ par voyageur depuis le 8 avril 2026, bébés compris. Calculez le total de votre famille en livres et en euros, sans surcoût.',
-    h1: 'Prix de l’ETA britannique : le tarif officiel pour tout le groupe',
-    intro: 'Choisissez votre passeport et le nombre de voyageurs : le calculateur multiplie le prix officiel et le convertit en euros au taux BCE.',
+    h1: 'Prix de l’ETA pour le Royaume-Uni : le tarif officiel pour tout le groupe',
+    intro: 'Choisissez votre passeport et le nombre de voyageurs : le calculateur multiplie le prix officiel de l’ETA du Royaume-Uni et le convertit en euros au taux BCE.',
     resume: (h) => {
       const f = F(h);
       return `L’autorisation de voyage électronique britannique (ETA) coûte ${f.uk} par personne, le montant fixé par le barème du Home Office entré en vigueur le ${f.ukSince}, quand il est passé de ${f.ukOld} à ${f.uk}. Il n’existe aucun tarif réduit : un bébé, un enfant et un adulte ont chacun besoin de leur propre ETA et paient chacun ${f.uk}, si bien qu’une famille de quatre paie ${f.times(f.A.uk.fee, 4).m}, environ ${f.times(f.A.uk.fee, 4).e.replace('≈ ', '')} au taux BCE du ${f.fxDate}. Le prix est le même sur GOV.UK et dans l’application officielle UK ETA, il n’est jamais remboursé une fois la demande faite, et payer davantage ailleurs n’accélère pas la décision. Une ETA couvre autant de séjours de six mois au plus que vous voulez pendant deux ans, ou jusqu’à l’expiration du passeport si elle arrive avant. Les voyageurs soumis au visa paient ${f.ukVisa} pour un visa visiteur de six mois et ne peuvent pas utiliser l’ETA. Le calculateur ci-dessus donne le total pour votre groupe et vérifie que votre passeport figure bien sur la liste.`;
@@ -76,7 +76,7 @@ ${h.table(['Travellers', 'Official fee', 'In euros'], rows, `UK ETA fee from ${f
       const f = F(h);
       const A = f.A;
       const rows = [1, 2, 3, 4, 5, 6].map((n) => [String(n), f.times(A.uk.fee, n).m, f.times(A.uk.fee, n).e]);
-      return `<h2>Combien coûte l’ETA selon la taille du groupe</h2>
+      return `<h2>Prix de l’ETA du Royaume-Uni selon la taille du groupe</h2>
 <p>Le prix est par personne et identique à tout âge. Ce tableau multiplie les ${f.uk} officielles et convertit le total au taux de référence BCE du ${f.fxDate} ; le montant débité en euros dépend du taux de votre banque le jour du paiement.</p>
 ${h.table(['Voyageurs', 'Prix officiel', 'En euros'], rows, `Prix de l’ETA britannique depuis le ${f.ukSince}, lu le ${f.dataDay}`, ['l', 'r', 'r'])}
 <h2>Ce que comprennent les ${f.uk}</h2>
@@ -100,7 +100,7 @@ ${h.table(['Voyageurs', 'Prix officiel', 'En euros'], rows, `Prix de l’ETA bri
     title: 'ETA England Kosten 2026: 20 £ pro Person, auch für Kinder',
     description: 'Die ETA für England kostet seit dem 8. April 2026 20 £ pro Person, auch für Babys. Rechnen Sie den Betrag für Ihre Familie in Pfund und Euro, ohne Aufschlag.',
     h1: 'ETA England Kosten: die amtliche Gebühr für Ihre Reisegruppe',
-    intro: 'Wählen Sie Ihren Pass und die Zahl der Reisenden: der Rechner multipliziert die amtliche Gebühr und rechnet sie zum EZB-Kurs in Euro um.',
+    intro: 'Wählen Sie Ihren Pass und die Zahl der Reisenden: der Rechner multipliziert die amtliche Gebühr der ETA England und rechnet die Kosten zum EZB-Kurs in Euro um.',
     resume: (h) => {
       const f = F(h);
       return `Die britische elektronische Einreisegenehmigung (ETA) kostet ${f.uk} pro Person; so steht es in der Gebührentabelle des Home Office, die seit dem ${f.ukSince} gilt und die Gebühr von ${f.ukOld} auf ${f.uk} angehoben hat. Einen ermäßigten Tarif gibt es nicht: Baby, Kind und Erwachsener brauchen jeweils eine eigene ETA und zahlen jeweils ${f.uk}, eine vierköpfige Familie also ${f.times(f.A.uk.fee, 4).m}, rund ${f.times(f.A.uk.fee, 4).e.replace('≈ ', '')} zum EZB-Kurs vom ${f.fxDate}. Der Preis ist auf GOV.UK und in der amtlichen App UK ETA derselbe, er wird nach dem Antrag nie erstattet, und wer anderswo mehr zahlt, bekommt keine schnellere Entscheidung. Eine ETA gilt zwei Jahre für beliebig viele Aufenthalte von bis zu sechs Monaten, oder bis der Pass abläuft, falls das früher ist. Wer ein Visum braucht, zahlt ${f.ukVisa} für ein Besuchervisum über sechs Monate und kann keine ETA nutzen. Der Rechner oben nennt den Betrag für Ihre Gruppe und prüft, ob Ihr Pass auf der ETA-Liste steht.`;
@@ -142,7 +142,7 @@ ${h.table(['Reisende', 'Amtliche Gebühr', 'In Euro'], rows, `ETA-Gebühr seit $
     title: 'ETA Engeland kosten 2026: 20 £ per persoon, ook voor kind',
     description: 'De ETA voor Engeland kost sinds 8 april 2026 20 £ per reiziger, ook voor baby’s. Reken het totaal voor uw gezin uit in ponden en euro, zonder toeslag.',
     h1: 'ETA Engeland kosten: het officiële tarief voor uw hele gezelschap',
-    intro: 'Kies uw paspoort en het aantal reizigers: de rekenhulp vermenigvuldigt het officiële tarief en rekent het om in euro tegen de ECB-koers.',
+    intro: 'Kies uw paspoort en het aantal reizigers: de rekenhulp vermenigvuldigt het officiële tarief van de ETA Engeland en rekent de kosten om in euro tegen de ECB-koers.',
     resume: (h) => {
       const f = F(h);
       return `De Britse elektronische reisvergunning (ETA) kost ${f.uk} per persoon; dat staat in de tarieventabel van het Home Office die sinds ${f.ukSince} geldt en het tarief van ${f.ukOld} naar ${f.uk} bracht. Een verlaagd tarief bestaat niet: een baby, een kind en een volwassene hebben elk een eigen ETA nodig en betalen elk ${f.uk}, zodat een gezin van vier ${f.times(f.A.uk.fee, 4).m} betaalt, ongeveer ${f.times(f.A.uk.fee, 4).e.replace('≈ ', '')} tegen de ECB-koers van ${f.fxDate}. De prijs is gelijk op GOV.UK en in de officiële app UK ETA, wordt na de aanvraag nooit terugbetaald, en wie elders meer betaalt, krijgt geen snellere beslissing. Eén ETA geldt twee jaar voor zoveel verblijven van hoogstens zes maanden als u wilt, of tot het paspoort verloopt als dat eerder is. Wie een visum nodig heeft, betaalt ${f.ukVisa} voor een bezoekersvisum van zes maanden en kan geen ETA gebruiken. De rekenhulp hierboven geeft het totaal voor uw gezelschap en controleert of uw paspoort op de ETA-lijst staat.`;
