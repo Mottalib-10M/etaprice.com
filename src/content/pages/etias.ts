@@ -8,7 +8,7 @@ export default definePage({
   tool: { kind: 'etias' },
   mini: { kind: 'cost', dest: 'GB' },
   related: ['uk-cost', 'esta', 'ca', 'uk-who'],
-  sources: ['etiasFee', 'etiasReg', 'etiasSite', 'govukEta'],
+  sources: ['etiasFee', 'etiasReg', 'etiasCom', 'etiasSite', 'govukEta'],
   en: {
     slug: 'etias',
     nav: 'ETIAS',
@@ -24,7 +24,7 @@ export default definePage({
     faqs: (h) => {
       const f = F(h);
       return [
-        { q: 'When does ETIAS start?', a: `No start date had been published on ${f.etiasRead}. In its July 2025 announcement of the ${f.etias} fee, the Commission referred to the last quarter of 2026, but a date only becomes binding once the Commission formally fixes it. Until then you cannot apply. This page will show the date as soon as it is published in the Official Journal or on the official EU travel site.` },
+        { q: 'When does ETIAS start?', a: `No start date had been published on ${f.etiasRead}. The Commission’s July 2025 announcement of the ${f.etias} fee referred to the last quarter of 2026, but its ETIAS page now says the EU will announce the date several months before launch. With no date announced yet, ETIAS will not open in 2026; 2027 is the earliest possible year. Until then you cannot apply. This page will show the date once it is official.` },
         { q: 'Do British travellers need ETIAS for France or Spain?', a: `Not yet. When ETIAS opens, British citizens visiting the Schengen area or Cyprus without a visa will need it, at ${f.etias} each between ${f.etiasUnder} and ${f.etiasOver} and free otherwise. Until then a valid passport is enough for a short stay, within the limit of 90 days in any 180-day period that already applies to British visitors.` },
         { q: 'Someone offered me an ETIAS application today. Is it real?', a: 'No. Since the system is not in operation, no authority can issue an ETIAS, and a site that collects passport details and payment for one is at best taking a deposit for a future service. When ETIAS opens, the only places to apply will be the official EU website and its app, both run by the European Union.' },
       ];
@@ -60,7 +60,7 @@ export default definePage({
       const f = F(h);
       return [
         { q: 'Brauche ich als Deutscher ein ETIAS für den Urlaub in Italien?', a: 'Nein. ETIAS gilt nur für Staatsangehörige von Ländern außerhalb der EU, deren Bürger ohne Visum in den Schengen-Raum reisen dürfen. Deutsche reisen innerhalb der EU weiter mit Personalausweis oder Reisepass. Wer allerdings in die USA, nach Großbritannien oder nach Kanada fliegt, braucht dort die jeweilige Genehmigung: ESTA, ETA oder eTA.' },
-        { q: 'Ab wann gilt ETIAS?', a: `Am ${f.etiasRead} war kein Starttermin veröffentlicht. Die Kommission sprach bei der Ankündigung der Gebühr von ${f.etias} im Juli 2025 vom letzten Quartal 2026, verbindlich wird ein Datum aber erst, wenn die Kommission es förmlich festlegt. Bis dahin kann niemand einen Antrag stellen. Diese Seite nennt das Datum, sobald es veröffentlicht ist.` },
+        { q: 'Ab wann gilt ETIAS?', a: `Am ${f.etiasRead} war kein Starttermin veröffentlicht. Bei der Ankündigung der Gebühr von ${f.etias} im Juli 2025 sprach die Kommission vom letzten Quartal 2026, auf ihrer ETIAS-Seite heißt es inzwischen aber, dass die EU den Termin mehrere Monate vorher bekannt gibt. Da noch keiner genannt ist, startet ETIAS nicht mehr 2026, frühestens 2027. Bis dahin kann niemand einen Antrag stellen. Diese Seite nennt das Datum, sobald es feststeht.` },
         { q: 'Mein amerikanischer Besuch fragt, ob er ETIAS braucht. Was sage ich?', a: `Heute noch nicht. Ab dem Start braucht jeder US-Bürger, der ohne Visum nach Deutschland oder in ein anderes Schengen-Land reist, ein ETIAS, ${f.etias} für Antragsteller zwischen ${f.etiasUnder} und ${f.etiasOver} Jahren, sonst gebührenfrei. Beantragt wird dann nur auf der amtlichen EU-Seite oder in der App der EU, nicht über Vermittler.` },
       ];
     },
@@ -95,7 +95,7 @@ export default definePage({
       const f = F(h);
       return [
         { q: 'Heb ik als Nederlander een ETIAS nodig voor Frankrijk of Spanje?', a: 'Nee. ETIAS geldt alleen voor onderdanen van landen buiten de EU waarvan de burgers zonder visum naar het Schengengebied mogen. Nederlanders reizen binnen de EU gewoon met identiteitskaart of paspoort. Wie naar de Verenigde Staten, het Verenigd Koninkrijk of Canada vliegt, heeft daar wel de eigen vergunning nodig: ESTA, ETA of eTA.' },
-        { q: 'Vanaf wanneer geldt ETIAS?', a: `Op ${f.etiasRead} was geen startdatum gepubliceerd. De Commissie sprak bij de aankondiging van het tarief van ${f.etias} in juli 2025 over het laatste kwartaal van 2026, maar een datum is pas bindend als de Commissie hem formeel vastlegt. Tot dan kan niemand een aanvraag indienen. Deze pagina vermeldt de datum zodra hij gepubliceerd is.` },
+        { q: 'Vanaf wanneer geldt ETIAS?', a: `Op ${f.etiasRead} was geen startdatum gepubliceerd. Bij de aankondiging van het tarief van ${f.etias} in juli 2025 sprak de Commissie over het laatste kwartaal van 2026, maar op haar ETIAS-pagina staat nu dat de EU de datum enkele maanden vooraf bekendmaakt. Omdat er nog geen datum is, start ETIAS niet meer in 2026, op zijn vroegst in 2027. Tot dan kan niemand een aanvraag indienen. Deze pagina vermeldt de datum zodra hij vaststaat.` },
         { q: 'Mijn Amerikaanse familie vraagt of ze een ETIAS nodig heeft. Wat zeg ik?', a: `Vandaag nog niet. Na de start heeft elke Amerikaan die zonder visum naar Nederland of een ander Schengenland reist een ETIAS nodig, ${f.etias} voor aanvragers tussen ${f.etiasUnder} en ${f.etiasOver} jaar, anders gratis. Aanvragen kan dan alleen op de officiële EU-site of in de app van de EU, niet via tussenpersonen.` },
       ];
     },

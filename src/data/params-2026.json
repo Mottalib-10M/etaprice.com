@@ -11,8 +11,8 @@
     "validityYears": 3,
     "operational": false,
     "startDate": null,
-    "statusReadOn": "2026-10-24",
-    "statusNote": "Aucune date de mise en service publiée par la Commission ou eu-LISA au 2026-10-24 ; l'annonce du 17/07/2025 visait « le dernier trimestre de 2026 »."
+    "statusReadOn": "2026-11-22",
+    "statusNote": "Aucune date de mise en service publiée par la Commission ou eu-LISA au 2026-11-22 ; l'annonce du 17/07/2025 visait « le dernier trimestre de 2026 », la page ETIAS de la Commission (relue le 2026-11-22) dit que la date sera annoncée « several months prior to its launch » : pas de démarrage en 2026."
   },
   "usIneligibleSince": "2011-03-01",
   "usVwpStay": 90,
@@ -207,6 +207,15 @@
         "fr": "Règlement (UE) 2018/1240 portant création de l’ETIAS",
         "de": "Verordnung (EU) 2018/1240 über ETIAS",
         "nl": "Verordening (EU) 2018/1240 tot oprichting van ETIAS"
+      }
+    },
+    "etiasCom": {
+      "url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
+      "label": {
+        "en": "European Commission, ETIAS page: start date to be announced several months before launch",
+        "fr": "Commission européenne, page ETIAS : date de démarrage annoncée plusieurs mois avant",
+        "de": "Europäische Kommission, ETIAS-Seite: Starttermin wird mehrere Monate vorher bekannt gegeben",
+        "nl": "Europese Commissie, ETIAS-pagina: startdatum wordt enkele maanden vooraf bekendgemaakt"
       }
     },
     "etiasSite": {
